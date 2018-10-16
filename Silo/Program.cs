@@ -49,6 +49,28 @@ namespace Silo
 				.ConfigureLogging(logging =>
 				{
 					logging.AddNLog();
+					//logging.AddConsole();
+				});
+
+			var host = builder.Build();
+			await host.StartAsync();
+			return host;
+		}
+
+		private static async Task<ISiloHost> StartSilo3()
+		{
+			ISiloConfiguration config = SiloConfigurationProvider.GetConfig();
+
+			// define the cluster configuration
+			var builder = new SiloHostBuilder()
+				.UseLocalhostClustering()
+				.Configure<ClusterOptions>( options => { options = config.ClusterConfig; })
+				.Configure<EndpointOptions>(options => { options = config.EndPointConfig; })
+				.Configure<AdoNetClusteringSiloOptions>(options => { options = config.ClusterDatabaseConfig; })
+				//.ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(HelloGrain).Assembly).WithReferences())
+				.ConfigureLogging(logging =>
+				{
+					logging.AddNLog();
 					logging.AddConsole();
 				});
 

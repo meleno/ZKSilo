@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Config.Net;
+using Microsoft.Extensions.Configuration;
 using System.IO;
 
 namespace SiloConfig
@@ -9,7 +10,7 @@ namespace SiloConfig
 
 		public static IConfiguration GetSiloConfiguration()
 		{
-			if (m_siloConfiguration != null)
+			if (m_siloConfiguration == null)
 			{
 				var configBuilder = new ConfigurationBuilder()
 						  .SetBasePath(Directory.GetCurrentDirectory())
@@ -19,6 +20,13 @@ namespace SiloConfig
 			}
 
 			return m_siloConfiguration;
+		}
+
+		public static ISiloConfiguration GetConfig()
+		{
+			return new ConfigurationBuilder<ISiloConfiguration>()
+				.UseJsonFile("config.json")
+				.Build();
 		}
 	}
 }
