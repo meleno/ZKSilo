@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SiloConfig
+namespace Silo.Config
 {
 	public interface ISiloConfiguration
 	{

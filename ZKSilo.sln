@@ -1,11 +1,10 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silo", "Silo\Silo.csproj", "{B151722F-9ACB-4C74-B40E-F4F5C6084D7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiloConfig", "SiloConfig\SiloConfig.csproj", "{4D7D637C-8CD7-4D80-A60D-5581E85EF4AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silo.Config", "Silo.Config\Silo.Config.csproj", "{4D7D637C-8CD7-4D80-A60D-5581E85EF4AE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{963A15E9-6EF3-47CE-943E-DCA7BA24E90A}"
 EndProject

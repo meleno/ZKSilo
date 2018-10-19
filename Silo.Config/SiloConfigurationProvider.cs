@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace SiloConfig
+namespace Silo.Config
 {
 	public static class SiloConfigurationProvider
 	{

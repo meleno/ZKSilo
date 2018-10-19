@@ -17,9 +17,12 @@ namespace WEBAPI.PushSDK.Controllers
 		[HttpPost]
 		public string Post([RequiredFromQuery] string sn, [RequiredFromQuery] string table)
 		{
-			using (var reader = new StreamReader(Request.Body, Encoding.Default))
+			if (table == "OPERLOG")
 			{
-				var message = reader.ReadToEnd();
+				string message;
+
+				using (var reader = new StreamReader(Request.Body, Encoding.Default))
+				{ message = reader.ReadToEnd(); }
 			}
 
 			return "OK";

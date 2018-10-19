@@ -22,7 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CommonData\CommonData.csproj" />
     <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
-    <ProjectReference Include="..\SiloConfig\SiloConfig.csproj" />
+    <ProjectReference Include="..\SiloConfig\Silo.Config.csproj" />
   </ItemGroup>
 
   <ItemGroup>
