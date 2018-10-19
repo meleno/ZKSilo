@@ -14,7 +14,7 @@ namespace SiloConfig
 			{
 				var configBuilder = new ConfigurationBuilder()
 						  .SetBasePath(Directory.GetCurrentDirectory())
-						  .AddJsonFile("config.json", reloadOnChange: true, optional: false);
+						  .AddJsonFile("config2.json", reloadOnChange: true, optional: false);
 
 				m_siloConfiguration = configBuilder.Build();
 			}
@@ -25,7 +25,7 @@ namespace SiloConfig
 		public static ISiloConfiguration GetConfig()
 		{
 			return new ConfigurationBuilder<ISiloConfiguration>()
-				.UseJsonFile("config.json")
+				.UseJsonFile("config2.json")
 				.Build();
 		}
 	}

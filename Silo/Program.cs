@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
+using Orleans;
 using Orleans.Configuration;
 using Orleans.Hosting;
 using SiloConfig;
@@ -50,6 +51,12 @@ namespace Silo
 				{
 					logging.AddNLog();
 					//logging.AddConsole();
+				})
+				.UseDashboard(options => 
+				{
+					options.Username = "meleno";
+					options.Password = "meleno";
+					options.Port = 9191;
 				});
 
 			var host = builder.Build();

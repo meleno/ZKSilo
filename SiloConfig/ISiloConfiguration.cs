@@ -12,5 +12,7 @@ namespace SiloConfig
 		EndpointOptions EndPointConfig { get; set; }
 
 		AdoNetClusteringSiloOptions ClusterDatabaseConfig { get; set; }
+
+		AdoNetClusteringSiloOptions DatabaseConfig { get; set; }
 	}
 }
