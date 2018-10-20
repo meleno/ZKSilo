@@ -10,12 +10,12 @@ namespace Silo.Grains
 {
 	public class SavePunch : Grain, ISavePunch
 	{
-		public Task<int> SavePunchInDatabase(Punch punchToSave)
+		public async Task<int> SavePunchInDatabase(Punch punchToSave)
 		{
-			using (var connection = new SqlConnection(SiloConfigurationProvider.GetConfig().DatabaseConfig.ConnectionString))
+			using (var connection = new SqlConnection(SiloConfigurationProvider.GetConfig().ConnectionString))
 			{
 				connection.Open();
-				return connection.InsertAsync(punchToSave);
+				return await connection.InsertAsync(punchToSave);
 			}
 		}
 	}

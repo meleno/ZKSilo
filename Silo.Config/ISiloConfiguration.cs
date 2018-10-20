@@ -7,12 +7,16 @@ namespace Silo.Config
 {
 	public interface ISiloConfiguration
 	{
-		ClusterOptions ClusterConfig { get; set; }
+		//ClusterOptions ClusterConfig { get; set; }
 
-		EndpointOptions EndPointConfig { get; set; }
+		//EndpointOptions EndPointConfig { get; set; }
 
-		AdoNetClusteringSiloOptions ClusterDatabaseConfig { get; set; }
+		//AdoNetClusteringSiloOptions ClusterDatabaseConfig { get; set; }
 
-		AdoNetClusteringSiloOptions DatabaseConfig { get; set; }
+		//AdoNetClusteringSiloOptions DatabaseConfig { get; set; }
+
+		string Invariant { get; set; }
+
+		string ConnectionString { get; set; }
 	}
 }

@@ -6,16 +6,15 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Orleans.Core.Abstractions" Version="2.1.2" />
+    <PackageReference Include="Microsoft.Orleans.OrleansCodeGenerator.Build" Version="2.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CommonData\CommonData.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Orleans.Core.Abstractions">
-      <HintPath>..\..\..\..\Users\roberto.vazquez\.nuget\packages\microsoft.orleans.core.abstractions\2.1.2\lib\netstandard2.0\Orleans.Core.Abstractions.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

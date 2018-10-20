@@ -1,24 +1,4 @@
 {
-  "ClusterOptions": {
-    "ServiceId": "PushSDK",
-    "ClusterId": "ZKSilo"
-  },
-
-  "EndPointConfig": {
-    "SiloPort": "11111",
-    "GatewayPort": "30000",
-    "AdvertisedIPAddress": "",
-    "SiloListeningEndpoint": "",
-    "GatewayListeningEndpoint": ""
-  },
-
-  "ClusterDatabaseConfig": {
-    "Invariant": "System.Data.SqlClient",
-    "ConnectionString": "Data Source=localhost\\SQLEXPRESS;database=Orleans;user=sa;password=Laurana;Integrated Security=True;Pooling=False;Max Pool Size=200;Asynchronous Processing=True;MultipleActiveResultSets=True"
-  },
-
-  "DatabaseConfig": {
-    "Invariant": "System.Data.SqlClient",
-    "ConnectionString": "Data Source=localhost\\SQLEXPRESS;database=ZKSilo;user=sa;password=Laurana;Integrated Security=True;Pooling=False;Max Pool Size=200;Asynchronous Processing=True;MultipleActiveResultSets=True"
-  }
+  "Invariant": "System.Data.SqlClient",
+  "ConnectionString": "Data Source=localhost\\SQLEXPRESS;database=ZKSilo;user=sa;password=Laurana;Integrated Security=True;"
 }

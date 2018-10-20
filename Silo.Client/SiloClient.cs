@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Interfaces;
+using Microsoft.Extensions.Configuration;
 using NLog.Extensions.Logging;
 using Orleans;
 using Orleans.Configuration;
@@ -20,21 +21,18 @@ namespace Silo.Client
 		{
 			if (m_client == null)
 			{
-				IConfiguration config = SiloConfigurationProvider.GetSiloConfiguration();
-
 				m_client = new ClientBuilder()
-					//.Configure<ClusterOptions>(config)
 					.Configure<ClusterOptions>(options =>
 					{
-						options.ClusterId = "ZKSilo";
+						options.ClusterId = "Silo1";
 						options.ServiceId = "ZKSilo";
 					})
-					//.Configure<AdoNetClusteringSiloOptions>(config)
 					.UseAdoNetClustering(options =>
 					{
 						options.ConnectionString = "Data Source=localhost\\SQLEXPRESS;database=Orleans;user=sa;password=Laurana";
 						options.Invariant = "System.Data.SqlClient";
 					})
+					.ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(ISavePunch).Assembly).WithReferences())
 					.ConfigureLogging(logging => logging.AddNLog())
 					.Build();
 

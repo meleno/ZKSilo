@@ -50,7 +50,7 @@ namespace Silo
 				//.Configure<AdoNetClusteringSiloOptions>(config)
 				.Configure<ClusterOptions>(options =>
 				{
-					options.ClusterId = "ZKSilo";
+					options.ClusterId = "Silo1";
 					options.ServiceId = "ZKSilo";
 				})
 				.ConfigureEndpoints(siloPort: 11111, gatewayPort: 30000)
@@ -59,7 +59,6 @@ namespace Silo
 					options.ConnectionString = "Data Source=localhost\\SQLEXPRESS;database=Orleans;user=sa;password=Laurana";
 					options.Invariant = "System.Data.SqlClient";
 				})
-				.Configure<EndpointOptions>(options => options.AdvertisedIPAddress = IPAddress.Loopback)
 				.ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(SavePunch).Assembly).WithReferences())
 				.ConfigureLogging(logging =>
 				{
@@ -83,17 +82,17 @@ namespace Silo
 			ISiloConfiguration config = SiloConfigurationProvider.GetConfig();
 
 			// define the cluster configuration
-			var builder = new SiloHostBuilder()
-				.UseLocalhostClustering()
-				.Configure<ClusterOptions>( options => { options = config.ClusterConfig; })
-				.Configure<EndpointOptions>(options => { options = config.EndPointConfig; })
-				.Configure<AdoNetClusteringSiloOptions>(options => { options = config.ClusterDatabaseConfig; })
-				//.ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(HelloGrain).Assembly).WithReferences())
-				.ConfigureLogging(logging =>
-				{
-					logging.AddNLog();
-					logging.AddConsole();
-				});
+			var builder = new SiloHostBuilder();
+			//	.UseLocalhostClustering()
+			//	.Configure<ClusterOptions>( options => { options = config.ClusterConfig; })
+			//	.Configure<EndpointOptions>(options => { options = config.EndPointConfig; })
+			//	.Configure<AdoNetClusteringSiloOptions>(options => { options = config.ClusterDatabaseConfig; })
+			//	//.ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(HelloGrain).Assembly).WithReferences())
+			//	.ConfigureLogging(logging =>
+			//	{
+			//		logging.AddNLog();
+			//		logging.AddConsole();
+			//	});
 
 			var host = builder.Build();
 			await host.StartAsync();
