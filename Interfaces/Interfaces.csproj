@@ -12,4 +12,10 @@
     <ProjectReference Include="..\CommonData\CommonData.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Orleans.Core.Abstractions">
+      <HintPath>..\..\..\..\Users\roberto.vazquez\.nuget\packages\microsoft.orleans.core.abstractions\2.1.2\lib\netstandard2.0\Orleans.Core.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

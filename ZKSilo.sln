@@ -11,6 +11,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonData", "CommonData\CommonData.csproj", "{1911E9AE-5063-4DED-A712-3659494E30E5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WEBAPI.PushSDK", "WEBAPI.PushSDK\WEBAPI.PushSDK.csproj", "{E2751C4F-D9CC-4364-BC7A-23BACD2C1BBD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7585DC38-6194-46A1-9954-58C91943A218} = {7585DC38-6194-46A1-9954-58C91943A218}
+		{1911E9AE-5063-4DED-A712-3659494E30E5} = {1911E9AE-5063-4DED-A712-3659494E30E5}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silo.Client", "Silo.Client\Silo.Client.csproj", "{7585DC38-6194-46A1-9954-58C91943A218}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silo.Grains", "Silo.Grains\Silo.Grains.csproj", "{CAE3C5D2-0FEB-446C-AA6E-15ED24C3BEDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +46,14 @@ Global
 		{E2751C4F-D9CC-4364-BC7A-23BACD2C1BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2751C4F-D9CC-4364-BC7A-23BACD2C1BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2751C4F-D9CC-4364-BC7A-23BACD2C1BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7585DC38-6194-46A1-9954-58C91943A218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7585DC38-6194-46A1-9954-58C91943A218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7585DC38-6194-46A1-9954-58C91943A218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7585DC38-6194-46A1-9954-58C91943A218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAE3C5D2-0FEB-446C-AA6E-15ED24C3BEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE3C5D2-0FEB-446C-AA6E-15ED24C3BEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE3C5D2-0FEB-446C-AA6E-15ED24C3BEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE3C5D2-0FEB-446C-AA6E-15ED24C3BEDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

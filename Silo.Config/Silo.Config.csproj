@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Config.Net" Version="4.10.1" />
-    <PackageReference Include="Config.Net.Json" Version="4.10.1" />
+    <PackageReference Include="Config.Net" Version="4.11.0" />
+    <PackageReference Include="Config.Net.Json" Version="4.11.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />

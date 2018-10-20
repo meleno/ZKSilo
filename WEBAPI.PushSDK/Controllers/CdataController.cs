@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using Silo.Client;
+using System;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace WEBAPI.PushSDK.Controllers
 {
@@ -15,7 +19,7 @@ namespace WEBAPI.PushSDK.Controllers
 		}
 
 		[HttpPost]
-		public string Post([RequiredFromQuery] string sn, [RequiredFromQuery] string table)
+		public async Task<string> Post([RequiredFromQuery] string sn, [RequiredFromQuery] string table)
 		{
 			if (table == "OPERLOG")
 			{
@@ -23,6 +27,13 @@ namespace WEBAPI.PushSDK.Controllers
 
 				using (var reader = new StreamReader(Request.Body, Encoding.Default))
 				{ message = reader.ReadToEnd(); }
+
+				try
+				{
+					var saver = (await SiloClient.GetSiloClient()).GetGrain<ISavePunch>(0);
+					var result = await saver.SavePunchInDatabase(new CommonData.Punch() { Date = DateTime.Now, EmployeeId = "000000009" });
+				}
+				catch (Exception e) { }
 			}
 
 			return "OK";

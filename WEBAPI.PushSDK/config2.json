@@ -1,7 +1,7 @@
 {
   "ClusterOptions": {
-    "ServiceId": "asdf",
-    "ClusterId": "asdf"
+    "ServiceId": "PushSDK",
+    "ClusterId": "ZKSilo"
   },
 
   "EndPointConfig": {

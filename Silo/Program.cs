@@ -4,8 +4,10 @@ using NLog.Extensions.Logging;
 using Orleans;
 using Orleans.Configuration;
 using Orleans.Hosting;
-using SiloConfig;
+using Silo.Config;
+using Silo.Grains;
 using System;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace Silo
@@ -42,11 +44,23 @@ namespace Silo
 
 			// define the cluster configuration
 			var builder = new SiloHostBuilder()
-				.UseLocalhostClustering()
-				.Configure<ClusterOptions>(config)
-				.Configure<EndpointOptions>(config)
-				.Configure<AdoNetClusteringSiloOptions>(config)
-				//.ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(HelloGrain).Assembly).WithReferences())
+				//.UseLocalhostClustering()
+				//.Configure<ClusterOptions>(config)
+				//.Configure<EndpointOptions>(config)
+				//.Configure<AdoNetClusteringSiloOptions>(config)
+				.Configure<ClusterOptions>(options =>
+				{
+					options.ClusterId = "ZKSilo";
+					options.ServiceId = "ZKSilo";
+				})
+				.ConfigureEndpoints(siloPort: 11111, gatewayPort: 30000)
+				.UseAdoNetClustering(options =>
+				{
+					options.ConnectionString = "Data Source=localhost\\SQLEXPRESS;database=Orleans;user=sa;password=Laurana";
+					options.Invariant = "System.Data.SqlClient";
+				})
+				.Configure<EndpointOptions>(options => options.AdvertisedIPAddress = IPAddress.Loopback)
+				.ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(SavePunch).Assembly).WithReferences())
 				.ConfigureLogging(logging =>
 				{
 					logging.AddNLog();

@@ -12,6 +12,8 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.1.1" />
     <PackageReference Include="Microsoft.Orleans.Clustering.AdoNet" Version="2.1.2" />
+    <PackageReference Include="Microsoft.Orleans.OrleansCodeGenerator" Version="2.1.2" />
+    <PackageReference Include="Microsoft.Orleans.OrleansProviders" Version="2.1.2" />
     <PackageReference Include="Microsoft.Orleans.OrleansRuntime" Version="2.1.2" />
     <PackageReference Include="NLog" Version="4.5.10" />
     <PackageReference Include="NLog.Extensions.Logging" Version="1.3.0" />
@@ -22,7 +24,8 @@
   <ItemGroup>
     <ProjectReference Include="..\CommonData\CommonData.csproj" />
     <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
-    <ProjectReference Include="..\SiloConfig\Silo.Config.csproj" />
+    <ProjectReference Include="..\Silo.Config\Silo.Config.csproj" />
+    <ProjectReference Include="..\Silo.Grains\Silo.Grains.csproj" />
   </ItemGroup>
 
   <ItemGroup>

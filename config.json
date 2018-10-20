@@ -1,0 +1,8 @@
+{
+  "ServiceId": "PushSDK",
+  "ClusterId": "ZKSilo",
+  "SiloPort": "11111",
+  "GatewayPort": "30000",
+  "Invariant": "System.Data.SqlClient",
+  "ConnectionString": "Data Source=localhost\\SQLEXPRESS;database=Orleans;user=sa;password=Laurana;Integrated Security=True;Pooling=False;Max Pool Size=200;Asynchronous Processing=True;MultipleActiveResultSets=True"
+}
