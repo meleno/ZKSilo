@@ -16,9 +16,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WEBAPI.PushSDK", "WEBAPI.Pu
 		{1911E9AE-5063-4DED-A712-3659494E30E5} = {1911E9AE-5063-4DED-A712-3659494E30E5}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silo.Client", "Silo.Client\Silo.Client.csproj", "{7585DC38-6194-46A1-9954-58C91943A218}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silo.Client", "Silo.Client\Silo.Client.csproj", "{7585DC38-6194-46A1-9954-58C91943A218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silo.Grains", "Silo.Grains\Silo.Grains.csproj", "{CAE3C5D2-0FEB-446C-AA6E-15ED24C3BEDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silo.Grains", "Silo.Grains\Silo.Grains.csproj", "{CAE3C5D2-0FEB-446C-AA6E-15ED24C3BEDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEBAPI.FrontEnd", "WEBAPI.FrontEnd\WEBAPI.FrontEnd.csproj", "{02DDE272-8840-4BB3-AECE-E0296375485A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,10 @@ Global
 		{CAE3C5D2-0FEB-446C-AA6E-15ED24C3BEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAE3C5D2-0FEB-446C-AA6E-15ED24C3BEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAE3C5D2-0FEB-446C-AA6E-15ED24C3BEDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02DDE272-8840-4BB3-AECE-E0296375485A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02DDE272-8840-4BB3-AECE-E0296375485A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02DDE272-8840-4BB3-AECE-E0296375485A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02DDE272-8840-4BB3-AECE-E0296375485A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
