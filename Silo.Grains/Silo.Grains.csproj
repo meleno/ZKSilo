@@ -21,9 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonData\CommonData.csproj" />
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
+    <ProjectReference Include="..\Silo.Common\Silo.Common.csproj" />
     <ProjectReference Include="..\Silo.Config\Silo.Config.csproj" />
+    <ProjectReference Include="..\Silo.Interfaces\Silo.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

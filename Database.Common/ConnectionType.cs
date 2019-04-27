@@ -1,4 +1,4 @@
-﻿namespace Database.IDatabaseGenerator
+﻿namespace Database.Common
 {
 	public enum ConnectionType
 	{

@@ -21,8 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonData\CommonData.csproj" />
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
     <ProjectReference Include="..\Silo.Config\Silo.Config.csproj" />
     <ProjectReference Include="..\Silo.Grains\Silo.Grains.csproj" />
   </ItemGroup>

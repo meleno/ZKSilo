@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonData\CommonData.csproj" />
+    <ProjectReference Include="..\Silo.Common\Silo.Common.csproj" />
   </ItemGroup>
 
 </Project>

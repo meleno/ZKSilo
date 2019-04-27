@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Database.IDatabaseGenerator
+namespace Database.Common
 {
 	public struct DatabaseConfig : IEquatable<DatabaseConfig>
 	{

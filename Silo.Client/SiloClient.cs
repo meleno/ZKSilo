@@ -1,11 +1,9 @@
-﻿using Interfaces;
-using Microsoft.Extensions.Configuration;
-using NLog.Extensions.Logging;
+﻿using NLog.Extensions.Logging;
 using Orleans;
 using Orleans.Configuration;
 using Orleans.Hosting;
 using Orleans.Runtime;
-using Silo.Config;
+using Silo.Interfaces;
 using System;
 using System.Threading.Tasks;
 

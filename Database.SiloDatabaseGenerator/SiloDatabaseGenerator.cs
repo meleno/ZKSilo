@@ -1,11 +1,12 @@
-﻿using System;
-using Database.IDatabaseGenerator;
+﻿using Database.Common;
+using System;
+using Database.IDatabase;
 
 namespace Database.SiloDatabaseGenerator
 {
-	public class SiloDatabaseGenerator : IDatabaseGenerator.IDatabaseGenerator
+	public class SiloDatabaseGenerator : IDatabaseGenerator, IDatabaseChecker, IDatabaseUpdater
 	{
-		public bool DatabaseExists(DatabaseConfig databaseConfig)
+		public bool CheckIfDatabaseExists(DatabaseConfig databaseConfig)
 		{
 			throw new NotImplementedException();
 		}

@@ -1,7 +1,7 @@
-﻿using Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Silo.Client;
-using Silo.Grains;
+using Silo.Common;
+using Silo.Interfaces;
 using System;
 using System.IO;
 using System.Text;
@@ -32,7 +32,7 @@ namespace WEBAPI.PushSDK.Controllers
 				try
 				{
 					var saver = (await SiloClient.GetSiloClient()).GetGrain<ISavePunch>(0);
-					await saver.SavePunchInDatabase(new CommonData.Punch() { Date = DateTime.Now, EmployeeId = "000000009" });
+					await saver.SavePunchInDatabase(new Punch() { Date = DateTime.Now, EmployeeId = "000000009" });
 				}
 				catch (Exception e) { return e.Message; }
 			}

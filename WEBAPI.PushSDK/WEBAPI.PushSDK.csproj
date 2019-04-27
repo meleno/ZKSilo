@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
     <ProjectReference Include="..\Silo.Client\Silo.Client.csproj" />
     <ProjectReference Include="..\Silo.Grains\Silo.Grains.csproj" />
   </ItemGroup>

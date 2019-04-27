@@ -1,4 +1,4 @@
-using Database.IDatabaseGenerator;
+using Database.Common;
 using Database.SiloDatabaseGenerator;
 using NUnit.Framework;
 
@@ -15,10 +15,11 @@ namespace Tests
 		}
 
 		[Test]
-		public void DatabaseExists_WhenCalled_ReturnIfExists(DatabaseConfig databaseConfig, bool expectedResult)
+		public void DatabaseExists_WhenDatabaseNotExists_ReturnFalse()
 		{
-			//var result = _databaseGenerator.DatabaseExists()
-			//Assert.That(result, Is.EqualTo(expectedResult);
+			var databaseConfig = new DatabaseConfig();
+			var result = _databaseGenerator.CheckIfDatabaseExists(databaseConfig);
+			Assert.That(result, Is.EqualTo(false));
 		}
 	}
 }

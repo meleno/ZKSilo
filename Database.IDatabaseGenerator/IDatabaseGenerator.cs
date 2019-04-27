@@ -1,11 +1,9 @@
-﻿namespace Database.IDatabaseGenerator
+﻿using Database.Common;
+
+namespace Database.IDatabase
 {
 	public interface IDatabaseGenerator
 	{
 		void GenerateDatabase(DatabaseConfig databaseConfig);
-
-		void UpdateDatabase(DatabaseConfig databaseConfig);
-
-		bool DatabaseExists(DatabaseConfig databaseConfig);
 	}
 }

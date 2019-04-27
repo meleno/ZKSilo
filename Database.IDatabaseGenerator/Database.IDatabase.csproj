@@ -5,12 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="1.60.6" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Database.Common\Database.Common.csproj" />
-    <ProjectReference Include="..\Database.IDatabaseGenerator\Database.IDatabase.csproj" />
   </ItemGroup>
 
 </Project>

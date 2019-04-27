@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Database.IDatabaseGenerator\Database.IDatabaseGenerator.csproj" />
+    <ProjectReference Include="..\Database.IDatabaseGenerator\Database.IDatabase.csproj" />
     <ProjectReference Include="..\Database.SiloDatabaseGenerator\Database.SiloDatabaseGenerator.csproj" />
   </ItemGroup>
 
