@@ -1,6 +1,8 @@
-﻿namespace Database.IDatabaseGenerator
+﻿using System;
+
+namespace Database.IDatabaseGenerator
 {
-	public struct DatabaseConfig
+	public struct DatabaseConfig : IEquatable<DatabaseConfig>
 	{
 		public string ServerAddress { get; set; }
 
@@ -17,5 +19,19 @@
 		public string DatabaseName { get; set; }
 
 		public ServerType ServerType { get; set; }
+
+		public int DatabaseId { get; set; }
+
+		public bool Equals(DatabaseConfig other)
+		{
+			return DatabaseId == other.DatabaseId;
+		}
+
+		public override int GetHashCode()
+		{
+			return DatabaseId.GetHashCode();
+		}
+
+		
 	}
 }
