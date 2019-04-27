@@ -1,14 +1,29 @@
 ﻿using Database.Common;
-using System;
 using Database.IDatabase;
+using Database.IDbConnectionFactory;
+using System;
 
 namespace Database.SiloDatabaseGenerator
 {
 	public class SiloDatabaseGenerator : IDatabaseGenerator, IDatabaseChecker, IDatabaseUpdater
 	{
+		private IDatabaseConnectionFactory _IDbConnectionProvider;
+
+		public SiloDatabaseGenerator(IDatabaseConnectionFactory connectionProvider)
+		{
+			_IDbConnectionProvider = connectionProvider;
+		}
+
 		public bool CheckIfDatabaseExists(DatabaseConfig databaseConfig)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				using (var conn = _IDbConnectionProvider.GetIDbConnectionForDatabase(databaseConfig))
+				{ conn.Open(); }
+				return true;
+			}
+			catch
+			{ return false; }
 		}
 
 		public void GenerateDatabase(DatabaseConfig databaseConfig)

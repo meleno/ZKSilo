@@ -27,9 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.SiloDatabaseGenera
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WEBAPI", "WEBAPI", "{528442F6-FDA5-42D3-9AC4-0CF41BC2B834}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WEBAPI", "WEBAPI", "{869303E2-4D0E-4E0E-AA01-C1B2C3344C19}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WEBAPITests", "WEBAPITests", "{869303E2-4D0E-4E0E-AA01-C1B2C3344C19}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{8B9E870E-775C-4AEB-B314-3B9CE335A973}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseTests", "DatabaseTests", "{8B9E870E-775C-4AEB-B314-3B9CE335A973}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.SiloDatabaseGenerator.UnitTests", "Database.SiloDatabaseGenerator.UnitTests\Database.SiloDatabaseGenerator.UnitTests.csproj", "{425715C9-546A-4E74-8F23-23FBDDB58228}"
 EndProject
@@ -42,6 +42,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silo.Server", "Silo.Server\Silo.Server.csproj", "{2376EFEA-90B4-405E-9AC3-3F8B7D43C480}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silo.Interfaces", "Silo.Interfaces\Silo.Interfaces.csproj", "{C5AED798-3ED8-4AC4-9282-977515901204}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.IDbConnectionFactory", "Database.IDbConnectionProvider\Database.IDbConnectionFactory.csproj", "{E7868183-9DE1-4A70-A2E7-AF94BD319C8F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.DapperConnectionFactory", "Database.DapperConnectionFactory\Database.DapperConnectionFactory.csproj", "{D73146B5-A57F-40B7-A34A-0B9229E51FC5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.DapperConnectionFactory.UnitTests", "Database.DapperConnectionFactory.UnitTests\Database.DapperConnectionFactory.UnitTests.csproj", "{91CD8BE6-2698-4867-8B3B-990808E4BBAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +107,18 @@ Global
 		{C5AED798-3ED8-4AC4-9282-977515901204}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5AED798-3ED8-4AC4-9282-977515901204}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5AED798-3ED8-4AC4-9282-977515901204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7868183-9DE1-4A70-A2E7-AF94BD319C8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7868183-9DE1-4A70-A2E7-AF94BD319C8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7868183-9DE1-4A70-A2E7-AF94BD319C8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7868183-9DE1-4A70-A2E7-AF94BD319C8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D73146B5-A57F-40B7-A34A-0B9229E51FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D73146B5-A57F-40B7-A34A-0B9229E51FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D73146B5-A57F-40B7-A34A-0B9229E51FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D73146B5-A57F-40B7-A34A-0B9229E51FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91CD8BE6-2698-4867-8B3B-990808E4BBAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91CD8BE6-2698-4867-8B3B-990808E4BBAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91CD8BE6-2698-4867-8B3B-990808E4BBAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91CD8BE6-2698-4867-8B3B-990808E4BBAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +139,9 @@ Global
 		{B1CB0F55-7987-4090-B5F1-730B47B04343} = {836FF459-EC63-43A9-8959-B3FEA53BA6D9}
 		{2376EFEA-90B4-405E-9AC3-3F8B7D43C480} = {836FF459-EC63-43A9-8959-B3FEA53BA6D9}
 		{C5AED798-3ED8-4AC4-9282-977515901204} = {836FF459-EC63-43A9-8959-B3FEA53BA6D9}
+		{E7868183-9DE1-4A70-A2E7-AF94BD319C8F} = {74C3E1F4-F0F8-42C2-A526-4A25F118AE1C}
+		{D73146B5-A57F-40B7-A34A-0B9229E51FC5} = {74C3E1F4-F0F8-42C2-A526-4A25F118AE1C}
+		{91CD8BE6-2698-4867-8B3B-990808E4BBAF} = {8B9E870E-775C-4AEB-B314-3B9CE335A973}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D7C31F6-C28D-46F3-B06E-6796EB88FF15}
