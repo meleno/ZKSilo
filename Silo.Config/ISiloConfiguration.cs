@@ -7,7 +7,7 @@ namespace Silo.Config
 {
 	public interface ISiloConfiguration
 	{
-		//ClusterOptions ClusterConfig { get; set; }
+		ClusterOptions ClusterConfig { get; set; }
 
 		//EndpointOptions EndPointConfig { get; set; }
 
