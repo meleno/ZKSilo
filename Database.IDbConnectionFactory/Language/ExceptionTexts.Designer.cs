@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Database.IDbConnectionFactory.Language {
+namespace Database.IDb.ConnectionFactory.Language {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Database.IDbConnectionFactory.Language {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Database.IDbConnectionFactory.Language.ExceptionTexts", typeof(ExceptionTexts).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Database.IDb.ConnectionFactory.Language.ExceptionTexts", typeof(ExceptionTexts).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

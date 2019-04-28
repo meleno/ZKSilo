@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Database.IDbConnectionFactory.Exceptions
+namespace Database.IDb.ConnectionFactory.Exceptions
 {
 	public class DatabaseServerNotSupportedException : DatabaseException
 	{

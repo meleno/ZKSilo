@@ -1,7 +1,7 @@
 using Database.Common;
 using Database.IDatabase;
-using Database.IDbConnectionFactory;
-using Database.IDbConnectionFactory.Exceptions;
+using Database.IDb.ConnectionFactory;
+using Database.IDb.ConnectionFactory.Exceptions;
 using MySql.Data.MySqlClient;
 using Npgsql;
 using NUnit.Framework;

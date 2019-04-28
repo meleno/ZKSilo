@@ -1,13 +1,13 @@
 ﻿using Database.Common;
 using Database.IDatabase;
-using Database.IDbConnectionFactory.Exceptions;
-using Database.IDbConnectionFactory.Language;
+using Database.IDb.ConnectionFactory.Exceptions;
+using Database.IDb.ConnectionFactory.Language;
 using MySql.Data.MySqlClient;
 using Npgsql;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Database.IDbConnectionFactory
+namespace Database.IDb.ConnectionFactory
 {
 	public class IDbConnectionFactory : IDatabaseConnectionFactory
 	{

@@ -2,7 +2,7 @@
 using Database.IDatabase;
 using System;
 
-namespace Database.SiloDatabaseGenerator
+namespace Database.IDb.SiloDatabaseGenerator
 {
 	public class SiloDatabaseGenerator : IDatabaseGenerator, IDatabaseChecker, IDatabaseUpdater
 	{

@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Database.IDatabase\Database.IDatabase.csproj" />
-    <ProjectReference Include="..\Database.SiloDatabaseGenerator\Database.IDbSiloDatabaseGenerator.csproj" />
+    <ProjectReference Include="..\Database.IDbSiloDatabaseGenerator\Database.IDb.SiloDatabaseGenerator.csproj" />
   </ItemGroup>
 
 </Project>

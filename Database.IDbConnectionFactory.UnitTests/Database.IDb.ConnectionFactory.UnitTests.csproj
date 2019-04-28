@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Database.IDatabase\Database.IDatabase.csproj" />
-    <ProjectReference Include="..\Database.IDbConnectionFactory\Database.IDbConnectionFactory.csproj" />
+    <ProjectReference Include="..\Database.IDbConnectionFactory\Database.IDb.ConnectionFactory.csproj" />
   </ItemGroup>
 
 </Project>

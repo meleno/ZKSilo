@@ -1,6 +1,6 @@
 using Database.Common;
 using Database.IDatabase;
-using Database.SiloDatabaseGenerator;
+using Database.IDb.SiloDatabaseGenerator;
 using Moq;
 using NUnit.Framework;
 using System.Data;
