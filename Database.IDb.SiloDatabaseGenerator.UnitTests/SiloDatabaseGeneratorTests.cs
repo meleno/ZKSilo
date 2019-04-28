@@ -23,12 +23,8 @@ namespace Tests
 
 			databaseConnection.Setup(dbconnection => dbconnection.Open());
 			databaseConnectionException.Setup(dbConnectionException => dbConnectionException.Open()).Throws(new Exception());
-
-			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == DATABASE_EXISTS_ID)))
-				.Returns(() => databaseConnection.Object);
-
-			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == DATABASE_NOT_EXISTS_ID)))
-				.Returns(() => databaseConnectionException.Object);
+			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == DATABASE_EXISTS_ID))).Returns(() => databaseConnection.Object);
+			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == DATABASE_NOT_EXISTS_ID))).Returns(() => databaseConnectionException.Object);
 
 			_databaseGenerator = new SiloDatabaseGeneratorSQLServer(databaseConnectionFactory.Object);
 		}
