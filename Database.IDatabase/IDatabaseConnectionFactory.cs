@@ -3,7 +3,7 @@ using System.Data;
 
 namespace Database.IDatabase
 {
-	public interface IDatabaseConnectionFactory
+	public interface IDbConnectionFactory
 	{
 		IDbConnection GetIDbConnectionForDatabase(DatabaseConfig config);
 	}

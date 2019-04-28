@@ -9,16 +9,16 @@ using System.Data.SqlClient;
 
 namespace Database.IDb.ConnectionFactory
 {
-	public class IDbConnectionFactory : IDatabaseConnectionFactory
+	public class ConnectionFactory : IDbConnectionFactory
 	{
-		private static IDbConnectionFactory _instance;
+		private static ConnectionFactory _instance;
 
-		private IDbConnectionFactory()
+		private ConnectionFactory()
 		{ }
 
-		public static IDatabaseConnectionFactory GetInstance()
+		public static IDbConnectionFactory GetInstance()
 		{
-			_instance = _instance == null ? new IDbConnectionFactory() : _instance;
+			_instance = _instance == null ? new ConnectionFactory() : _instance;
 			return _instance;
 		}
 

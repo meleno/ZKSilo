@@ -12,18 +12,18 @@ namespace Tests
 {
 	public class IDbConnectionFactoryTests
 	{
-		private IDatabaseConnectionFactory _connectionFactoryInstance;
+		private IDbConnectionFactory _connectionFactoryInstance;
 
 		[SetUp]
 		public void Setup()
 		{
-			_connectionFactoryInstance = IDbConnectionFactory.GetInstance();
+			_connectionFactoryInstance = ConnectionFactory.GetInstance();
 		}
 
 		[Test]
 		public void GetInstance_WhenCalled_ReturnsInstance()
 		{
-			Assert.That(_connectionFactoryInstance, Is.InstanceOf<IDatabaseConnectionFactory>());
+			Assert.That(_connectionFactoryInstance, Is.InstanceOf<IDbConnectionFactory>());
 		}
 
 		[Test]

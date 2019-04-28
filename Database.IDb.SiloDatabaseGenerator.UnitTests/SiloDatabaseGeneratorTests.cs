@@ -14,7 +14,7 @@ namespace Tests
 		[SetUp]
 		public void Setup()
 		{
-			var databaseConnectionFactory = new Mock<IDatabaseConnectionFactory>();
+			var databaseConnectionFactory = new Mock<IDbConnectionFactory>();
 			var databaseConnection = new Mock<IDbConnection>();
 
 			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.IsAny<DatabaseConfig>()))

@@ -6,9 +6,9 @@ namespace Database.IDb.SiloDatabaseGenerator
 {
 	public class SiloDatabaseGenerator : IDatabaseGenerator, IDatabaseChecker, IDatabaseUpdater
 	{
-		private IDatabaseConnectionFactory _IDbConnectionProvider;
+		private IDbConnectionFactory _IDbConnectionProvider;
 
-		public SiloDatabaseGenerator(IDatabaseConnectionFactory connectionProvider)
+		public SiloDatabaseGenerator(IDbConnectionFactory connectionProvider)
 		{
 			_IDbConnectionProvider = connectionProvider;
 		}
