@@ -1,5 +1,9 @@
 ﻿using Database.Common;
 using Database.IDatabase;
+using Database.IDbConnectionFactory.Exceptions;
+using Database.IDbConnectionFactory.Language;
+using MySql.Data.MySqlClient;
+using Npgsql;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -24,8 +28,12 @@ namespace Database.IDbConnectionFactory
 			{
 				case ServerType.SQLServer:
 					return new SqlConnection(string.Empty);
+				case ServerType.MySQL:
+					return new MySqlConnection(string.Empty);
+				case ServerType.PostgreSQL:
+					return new NpgsqlConnection(string.Empty);
 				default:
-					return new SqlConnection(string.Empty);
+					throw new DatabaseServerNotSupportedException(string.Format(ExceptionTexts.DatabaseNotSupported, config.ServerType), null, 1000);
 
 			}
 		}

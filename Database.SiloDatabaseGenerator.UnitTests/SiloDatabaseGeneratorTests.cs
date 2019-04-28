@@ -17,11 +17,7 @@ namespace Tests
 			var databaseConnectionFactory = new Mock<IDatabaseConnectionFactory>();
 			var databaseConnection = new Mock<IDbConnection>();
 
-			databaseConnection.Setup(dbConn => dbConn.Open());
-			databaseConnection.Setup(dbConn => dbConn.Dispose());
-			databaseConnection.Setup(dbConn => dbConn.Close());
-
-			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(new DatabaseConfig()))
+			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.IsAny<DatabaseConfig>()))
 				.Returns(() => databaseConnection.Object);
 
 			_databaseGenerator = new SiloDatabaseGenerator(databaseConnectionFactory.Object);

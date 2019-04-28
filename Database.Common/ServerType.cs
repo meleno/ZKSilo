@@ -5,5 +5,6 @@
 		SQLServer,
 		MySQL,
 		PostgreSQL,
+		Oracle,
 	}
 }
