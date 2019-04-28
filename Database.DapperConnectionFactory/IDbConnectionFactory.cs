@@ -3,18 +3,18 @@ using Database.IDatabase;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Database.DapperConnectionFactory
+namespace Database.IDbConnectionFactory
 {
-	public class DapperConnectionFactory : IDatabaseConnectionFactory
+	public class IDbConnectionFactory : IDatabaseConnectionFactory
 	{
-		private static DapperConnectionFactory _instance;
+		private static IDbConnectionFactory _instance;
 
-		private DapperConnectionFactory()
+		private IDbConnectionFactory()
 		{ }
 
 		public static IDatabaseConnectionFactory GetInstance()
 		{
-			_instance = _instance == null ? new DapperConnectionFactory() : _instance;
+			_instance = _instance == null ? new IDbConnectionFactory() : _instance;
 			return _instance;
 		}
 

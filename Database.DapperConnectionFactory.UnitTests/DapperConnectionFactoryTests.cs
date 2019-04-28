@@ -1,4 +1,4 @@
-using Database.DapperConnectionFactory;
+using Database.IDbConnectionFactory;
 using Database.IDatabase;
 using NUnit.Framework;
 
@@ -11,7 +11,7 @@ namespace Tests
 		[SetUp]
 		public void Setup()
 		{
-			_connectionFactoryInstance = DapperConnectionFactory.GetInstance();
+			_connectionFactoryInstance = IDbConnectionFactory.GetInstance();
 		}
 
 		[Test]

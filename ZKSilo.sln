@@ -41,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silo.Server", "Silo.Server\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silo.Interfaces", "Silo.Interfaces\Silo.Interfaces.csproj", "{C5AED798-3ED8-4AC4-9282-977515901204}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.DapperConnectionFactory", "Database.DapperConnectionFactory\Database.DapperConnectionFactory.csproj", "{D73146B5-A57F-40B7-A34A-0B9229E51FC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.IDbConnectionFactory", "Database.DapperConnectionFactory\Database.IDbConnectionFactory.csproj", "{D73146B5-A57F-40B7-A34A-0B9229E51FC5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.DapperConnectionFactory.UnitTests", "Database.DapperConnectionFactory.UnitTests\Database.DapperConnectionFactory.UnitTests.csproj", "{91CD8BE6-2698-4867-8B3B-990808E4BBAF}"
 EndProject

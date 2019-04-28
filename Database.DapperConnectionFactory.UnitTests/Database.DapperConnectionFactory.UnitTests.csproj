@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Database.DapperConnectionFactory\Database.DapperConnectionFactory.csproj" />
+    <ProjectReference Include="..\Database.DapperConnectionFactory\Database.IDbConnectionFactory.csproj" />
   </ItemGroup>
 
 </Project>
