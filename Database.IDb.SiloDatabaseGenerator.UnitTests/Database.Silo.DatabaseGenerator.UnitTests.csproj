@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MySql.Data" Version="8.0.16" />
-    <PackageReference Include="Npgsql" Version="4.0.6" />
+    <PackageReference Include="Moq" Version="4.10.1" />
     <PackageReference Include="nunit" Version="3.10.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
@@ -16,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Database.IDatabase\Database.IDatabase.csproj" />
-    <ProjectReference Include="..\Database.IDbConnectionFactory\Database.IDb.ConnectionFactory.csproj" />
+    <ProjectReference Include="..\Database.IDb.SiloDatabaseGenerator\Database.IDb.SiloDatabaseGenerator.csproj" />
   </ItemGroup>
 
 </Project>
