@@ -10,6 +10,8 @@ namespace Tests
 {
 	public class SiloDatabaseGeneratorTests
 	{
+		private const int DATABASE_NOT_EXISTS_ID = 2;
+		private const int DATABASE_EXISTS_ID = 1;
 		private SiloDatabaseGeneratorSQLServer _databaseGenerator;
 
 		[SetUp]
@@ -22,10 +24,10 @@ namespace Tests
 			databaseConnection.Setup(dbconnection => dbconnection.Open());
 			databaseConnectionException.Setup(dbConnectionException => dbConnectionException.Open()).Throws(new Exception());
 
-			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == 1)))
+			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == DATABASE_EXISTS_ID)))
 				.Returns(() => databaseConnection.Object);
 
-			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == 2)))
+			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == DATABASE_NOT_EXISTS_ID)))
 				.Returns(() => databaseConnectionException.Object);
 
 			_databaseGenerator = new SiloDatabaseGeneratorSQLServer(databaseConnectionFactory.Object);
@@ -34,7 +36,7 @@ namespace Tests
 		[Test]
 		public void DatabaseExists_WhenDatabaseExists_ReturnTrue()
 		{
-			var databaseConfig = new DatabaseConfig() { DatabaseId = 1 };
+			var databaseConfig = new DatabaseConfig() { DatabaseId = DATABASE_EXISTS_ID };
 			var result = _databaseGenerator.CheckIfDatabaseExists(databaseConfig);
 			Assert.That(result, Is.EqualTo(true));
 		}
@@ -42,7 +44,7 @@ namespace Tests
 		[Test]
 		public void DatabaseExists_WhenDatabaseNotExists_ReturnFalse()
 		{
-			var databaseConfig = new DatabaseConfig() { DatabaseId = 2 };
+			var databaseConfig = new DatabaseConfig() { DatabaseId = DATABASE_NOT_EXISTS_ID };
 			var result = _databaseGenerator.CheckIfDatabaseExists(databaseConfig);
 			Assert.That(result, Is.EqualTo(false));
 		}
