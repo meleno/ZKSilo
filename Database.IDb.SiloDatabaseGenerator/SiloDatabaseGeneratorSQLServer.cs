@@ -4,11 +4,11 @@ using System;
 
 namespace Database.IDb.SiloDatabaseGenerator
 {
-	public class SiloDatabaseGenerator : IDatabaseGenerator, IDatabaseChecker, IDatabaseUpdater
+	public class SiloDatabaseGeneratorSQLServer : IDatabaseGenerator, IDatabaseChecker, IDatabaseUpdater
 	{
 		private IDbConnectionFactory _IDbConnectionProvider;
 
-		public SiloDatabaseGenerator(IDbConnectionFactory connectionProvider)
+		public SiloDatabaseGeneratorSQLServer(IDbConnectionFactory connectionProvider)
 		{
 			_IDbConnectionProvider = connectionProvider;
 		}
