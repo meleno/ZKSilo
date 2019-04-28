@@ -1,9 +1,8 @@
 using Database.Common;
-using Database.IDbConnectionFactory;
+using Database.IDatabase;
 using Database.SiloDatabaseGenerator;
 using Moq;
 using NUnit.Framework;
-using System;
 using System.Data;
 
 namespace Tests
@@ -18,9 +17,9 @@ namespace Tests
 			var databaseConnectionFactory = new Mock<IDatabaseConnectionFactory>();
 			var databaseConnection = new Mock<IDbConnection>();
 
-			//databaseConnection.Setup(dbConn => dbConn.Open());
-			//databaseConnection.Setup(dbConn => dbConn.Dispose());
-			//databaseConnection.Setup(dbConn => dbConn.Close());
+			databaseConnection.Setup(dbConn => dbConn.Open());
+			databaseConnection.Setup(dbConn => dbConn.Dispose());
+			databaseConnection.Setup(dbConn => dbConn.Close());
 
 			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(new DatabaseConfig()))
 				.Returns(() => databaseConnection.Object);

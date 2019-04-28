@@ -9,7 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Database.IDbConnectionProvider\Database.IDbConnectionFactory.csproj" />
+    <ProjectReference Include="..\Database.Common\Database.Common.csproj" />
+    <ProjectReference Include="..\Database.IDatabase\Database.IDatabase.csproj" />
   </ItemGroup>
 
 </Project>

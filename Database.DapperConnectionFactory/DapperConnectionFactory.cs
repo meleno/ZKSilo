@@ -1,5 +1,5 @@
 ﻿using Database.Common;
-using Database.IDbConnectionFactory;
+using Database.IDatabase;
 using System.Data;
 using System.Data.SqlClient;
 

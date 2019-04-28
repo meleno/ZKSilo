@@ -6,8 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Database.Common\Database.Common.csproj" />
-    <ProjectReference Include="..\Database.IDatabaseGenerator\Database.IDatabase.csproj" />
-    <ProjectReference Include="..\Database.IDbConnectionProvider\Database.IDbConnectionFactory.csproj" />
+    <ProjectReference Include="..\Database.IDatabase\Database.IDatabase.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,5 @@
 ﻿using Database.Common;
 using Database.IDatabase;
-using Database.IDbConnectionFactory;
 using System;
 
 namespace Database.SiloDatabaseGenerator

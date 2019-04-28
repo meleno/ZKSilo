@@ -1,7 +1,7 @@
 ﻿using Database.Common;
 using System.Data;
 
-namespace Database.IDbConnectionFactory
+namespace Database.IDatabase
 {
 	public interface IDatabaseConnectionFactory
 	{
