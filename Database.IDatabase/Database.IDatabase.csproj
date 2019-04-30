@@ -8,4 +8,19 @@
     <ProjectReference Include="..\Database.Common\Database.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Language\ExceptionTexts.Designer.cs">
+      <DependentUpon>ExceptionTexts.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Language\ExceptionTexts.resx">
+      <LastGenOutput>ExceptionTexts.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

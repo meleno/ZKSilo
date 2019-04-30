@@ -1,7 +1,7 @@
 ﻿using Database.Common;
 using Database.IDatabase;
-using Database.IDb.ConnectionFactory.Exceptions;
-using Database.IDb.ConnectionFactory.Language;
+using Database.IDatabase.Exceptions;
+using Database.IDatabase.Language;
 using MySql.Data.MySqlClient;
 using Npgsql;
 using System.Data;
@@ -33,7 +33,7 @@ namespace Database.IDb.ConnectionFactory
 				case ServerType.PostgreSQL:
 					return new NpgsqlConnection(string.Empty);
 				default:
-					throw new DatabaseServerNotSupportedException(string.Format(ExceptionTexts.DatabaseNotSupported, config.ServerType), null, 1000);
+					throw new DatabaseServerNotSupportedException(string.Format(ExceptionTexts.DatabaseNotSupported, config.ServerType));
 
 			}
 		}

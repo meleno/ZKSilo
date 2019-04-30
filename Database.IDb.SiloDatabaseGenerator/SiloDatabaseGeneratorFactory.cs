@@ -1,5 +1,7 @@
 ﻿using Database.Common;
 using Database.IDatabase;
+using Database.IDatabase.Exceptions;
+using Database.IDatabase.Language;
 using System;
 
 namespace Database.IDb.SiloDatabaseGenerator
@@ -15,7 +17,13 @@ namespace Database.IDb.SiloDatabaseGenerator
 
 		public IDatabaseGenerator GetDatabaseGenerator(DatabaseConfig databaseSettings)
 		{
-			throw new NotImplementedException();
+			switch(databaseSettings.ServerType)
+			{
+				case ServerType.SQLServer:
+					return new SiloDatabaseGeneratorSQLServer(_connectionFactory);
+				default:
+					throw new DatabaseServerNotSupportedException(string.Format(ExceptionTexts.DatabaseNotSupported, databaseSettings.ServerType));
+			}
 		}
 	}
 }

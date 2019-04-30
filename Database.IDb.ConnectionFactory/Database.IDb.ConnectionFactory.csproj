@@ -15,19 +15,4 @@
     <ProjectReference Include="..\Database.IDatabase\Database.IDatabase.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Language\ExceptionTexts.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ExceptionTexts.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Language\ExceptionTexts.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ExceptionTexts.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-
 </Project>

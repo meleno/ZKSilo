@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Database.IDb.ConnectionFactory.Language {
+namespace Database.IDatabase.Language {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace Database.IDb.ConnectionFactory.Language {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ExceptionTexts {
+    public class ExceptionTexts {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +36,10 @@ namespace Database.IDb.ConnectionFactory.Language {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Database.IDb.ConnectionFactory.Language.ExceptionTexts", typeof(ExceptionTexts).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Database.IDatabase.Language.ExceptionTexts", typeof(ExceptionTexts).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace Database.IDb.ConnectionFactory.Language {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Database.IDb.ConnectionFactory.Language {
         /// <summary>
         ///   Looks up a localized string similar to {0} is not supported.
         /// </summary>
-        internal static string DatabaseNotSupported {
+        public static string DatabaseNotSupported {
             get {
                 return ResourceManager.GetString("DatabaseNotSupported", resourceCulture);
             }

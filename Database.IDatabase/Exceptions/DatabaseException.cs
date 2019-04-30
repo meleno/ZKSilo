@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Database.IDb.ConnectionFactory.Exceptions
+namespace Database.IDatabase.Exceptions
 {
 	public class DatabaseException : ApplicationException
 	{
 		public int ErrorCode { get; private set; }
 
-		public DatabaseException(string message, Exception inner, int errorCode) : base(message, inner)
+		public DatabaseException(string message, int errorCode, Exception inner = null) : base(message, inner)
 		{
 			ErrorCode = errorCode;
 		}
