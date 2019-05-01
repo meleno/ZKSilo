@@ -6,11 +6,11 @@ using System;
 
 namespace Database.IDb.SiloDatabaseGenerator
 {
-	public class SiloDatabaseGeneratorFactory : IDatabaseGeneratorFactory
+	public class ClusterDatabaseGeneratorFactory : IDatabaseGeneratorFactory
 	{
 		private IDbConnectionFactory _connectionFactory;
 
-		public SiloDatabaseGeneratorFactory(IDbConnectionFactory connectionFactory)
+		public ClusterDatabaseGeneratorFactory(IDbConnectionFactory connectionFactory)
 		{
 			_connectionFactory = connectionFactory;
 		}
@@ -20,7 +20,7 @@ namespace Database.IDb.SiloDatabaseGenerator
 			switch(databaseSettings.ServerType)
 			{
 				case ServerType.SQLServer:
-					return new SiloDatabaseGeneratorSQLServer(_connectionFactory);
+					return new ClusterDatabaseGeneratorSQLServer(_connectionFactory);
 				default:
 					throw new DatabaseServerNotSupportedException(string.Format(ExceptionTexts.DatabaseNotSupported, databaseSettings.ServerType));
 			}

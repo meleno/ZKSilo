@@ -1,6 +1,6 @@
 using Database.Common;
 using Database.IDatabase;
-using Database.IDb.SiloDatabaseGenerator;
+using Database.IDb.DatabaseChecker;
 using Moq;
 using NUnit.Framework;
 using System;
@@ -8,11 +8,11 @@ using System.Data;
 
 namespace Tests
 {
-	public class SiloDatabaseGeneratorTests
+	public class Tests
 	{
 		private const int DATABASE_NOT_EXISTS_ID = 2;
 		private const int DATABASE_EXISTS_ID = 1;
-		private SiloDatabaseGeneratorSQLServer _databaseGenerator;
+		private DatabaseChecker _databaseGenerator;
 
 		[SetUp]
 		public void Setup()
@@ -26,7 +26,7 @@ namespace Tests
 			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == DATABASE_EXISTS_ID))).Returns(() => databaseConnection.Object);
 			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == DATABASE_NOT_EXISTS_ID))).Returns(() => databaseConnectionException.Object);
 
-			_databaseGenerator = new SiloDatabaseGeneratorSQLServer(databaseConnectionFactory.Object);
+			_databaseGenerator = new DatabaseChecker(databaseConnectionFactory.Object);
 		}
 
 		[Test]

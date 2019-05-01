@@ -4,25 +4,13 @@ using System;
 
 namespace Database.IDb.SiloDatabaseGenerator
 {
-	public class SiloDatabaseGeneratorSQLServer : IDatabaseGenerator, IDatabaseChecker, IDatabaseUpdater
+	public class ClusterDatabaseGeneratorSQLServer : IDatabaseGenerator, IDatabaseUpdater
 	{
 		private IDbConnectionFactory _IDbConnectionProvider;
 
-		public SiloDatabaseGeneratorSQLServer(IDbConnectionFactory connectionProvider)
+		public ClusterDatabaseGeneratorSQLServer(IDbConnectionFactory connectionProvider)
 		{
 			_IDbConnectionProvider = connectionProvider;
-		}
-
-		public bool CheckIfDatabaseExists(DatabaseConfig databaseConfig)
-		{
-			try
-			{
-				using (var conn = _IDbConnectionProvider.GetIDbConnectionForDatabase(databaseConfig))
-				{ conn.Open(); }
-				return true;
-			}
-			catch
-			{ return false; }
 		}
 
 		public void GenerateDatabase(DatabaseConfig databaseConfig)

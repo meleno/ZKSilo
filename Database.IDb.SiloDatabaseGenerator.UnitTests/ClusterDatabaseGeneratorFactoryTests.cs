@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Tests
 {
-	class SiloDatabaseGeneratorFactoryTests
+	class ClusterDatabaseGeneratorFactoryTests
 	{
 		IDatabaseGeneratorFactory _databaseGenerator;
 
@@ -21,14 +21,14 @@ namespace Tests
 
 			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.IsAny<DatabaseConfig>())).Returns(() => databaseConnection.Object);
 
-			_databaseGenerator = new SiloDatabaseGeneratorFactory(databaseConnectionFactory.Object);
+			_databaseGenerator = new ClusterDatabaseGeneratorFactory(databaseConnectionFactory.Object);
 		}
 
 		[Test]
 		public void GetDatabaseGenerator_WhenCalledWithSQLServer_ReturnsSQLServerGenerator()
 		{
 			var result = _databaseGenerator.GetDatabaseGenerator(new DatabaseConfig() { ServerType = ServerType.SQLServer });
-			Assert.That(result, Is.TypeOf<SiloDatabaseGeneratorSQLServer>());
+			Assert.That(result, Is.TypeOf<ClusterDatabaseGeneratorSQLServer>());
 		}
 
 		[Test]
