@@ -1,11 +1,10 @@
 using Database.Common;
 using Database.IDatabase;
+using Database.IDatabase.Exceptions;
 using Database.IDb.ConnectionFactory;
-using Database.IDb.ConnectionFactory.Exceptions;
 using MySql.Data.MySqlClient;
 using Npgsql;
 using NUnit.Framework;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace Tests
