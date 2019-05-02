@@ -11,27 +11,25 @@ namespace Database.IDb.ConnectionFactory
 {
 	public class ConnectionFactory : IDbConnectionFactory
 	{
-		private static ConnectionFactory _instance;
+		private IConnectionStringProvider _connectionStringProvider;
 
-		private ConnectionFactory()
-		{ }
-
-		public static IDbConnectionFactory GetInstance()
+		public ConnectionFactory(IConnectionStringProvider connectionStringProvider)
 		{
-			_instance = _instance == null ? new ConnectionFactory() : _instance;
-			return _instance;
+			_connectionStringProvider = connectionStringProvider;
 		}
 
 		public IDbConnection GetIDbConnectionForDatabase(DatabaseConfig config)
 		{
+			var connectionString = _connectionStringProvider.GetConnectionString(config);
+
 			switch (config.ServerType)
 			{
 				case ServerType.SQLServer:
-					return new SqlConnection(string.Empty);
+					return new SqlConnection(connectionString);
 				case ServerType.MySQL:
-					return new MySqlConnection(string.Empty);
+					return new MySqlConnection(connectionString);
 				case ServerType.PostgreSQL:
-					return new NpgsqlConnection(string.Empty);
+					return new NpgsqlConnection(connectionString);
 				default:
 					throw new DatabaseServerNotSupportedException(string.Format(ExceptionTexts.DatabaseNotSupported, config.ServerType));
 

@@ -8,11 +8,11 @@ using System.Data;
 
 namespace Tests
 {
-	public class Tests
+	public class SQLServerDatabaseCheckerTests
 	{
 		private const int DATABASE_NOT_EXISTS_ID = 2;
 		private const int DATABASE_EXISTS_ID = 1;
-		private DatabaseChecker _databaseGenerator;
+		private SQLServerDatabaseChecker _databaseGenerator;
 
 		[SetUp]
 		public void Setup()
@@ -26,7 +26,7 @@ namespace Tests
 			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == DATABASE_EXISTS_ID))).Returns(() => databaseConnection.Object);
 			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == DATABASE_NOT_EXISTS_ID))).Returns(() => databaseConnectionException.Object);
 
-			_databaseGenerator = new DatabaseChecker(databaseConnectionFactory.Object);
+			_databaseGenerator = new SQLServerDatabaseChecker(databaseConnectionFactory.Object);
 		}
 
 		[Test]

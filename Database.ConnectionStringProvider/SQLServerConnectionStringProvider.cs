@@ -4,7 +4,7 @@ using System;
 
 namespace Database.ConnectionStringProvider
 {
-	public class ConnectionStringProvider : IConnectionStringProvider
+	public class SQLServerConnectionStringProvider : IConnectionStringProvider
 	{
 		public string GetConnectionString(DatabaseConfig config)
 		{

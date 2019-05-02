@@ -4,15 +4,15 @@ using NUnit.Framework;
 
 namespace Tests
 {
-	public class ConnectionStringProviderTests
+	public class SQLServerConnectionStringProviderTests
 	{
-		ConnectionStringProvider _connectionStringFactory;
+		SQLServerConnectionStringProvider _connectionStringFactory;
 		DatabaseConfig _SQLServerdatabaseConfig;
 
 		[SetUp]
 		public void Setup()
 		{
-			_connectionStringFactory = new ConnectionStringProvider();
+			_connectionStringFactory = new SQLServerConnectionStringProvider();
 			_SQLServerdatabaseConfig = new DatabaseConfig() {
 				AcceptAllCertificates = true,
 				ConnectionType = ConnectionType.UserPassword,

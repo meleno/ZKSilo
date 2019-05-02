@@ -2,7 +2,6 @@
 using Database.IDatabase;
 using Database.IDatabase.Exceptions;
 using Database.IDatabase.Language;
-using System;
 
 namespace Database.IDb.SiloDatabaseGenerator
 {
@@ -17,7 +16,7 @@ namespace Database.IDb.SiloDatabaseGenerator
 
 		public IDatabaseGenerator GetDatabaseGenerator(DatabaseConfig databaseSettings)
 		{
-			switch(databaseSettings.ServerType)
+			switch (databaseSettings.ServerType)
 			{
 				case ServerType.SQLServer:
 					return new ClusterDatabaseGeneratorSQLServer(_connectionFactory);

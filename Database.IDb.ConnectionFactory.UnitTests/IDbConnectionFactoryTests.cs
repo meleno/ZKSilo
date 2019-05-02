@@ -2,6 +2,7 @@ using Database.Common;
 using Database.IDatabase;
 using Database.IDatabase.Exceptions;
 using Database.IDb.ConnectionFactory;
+using Moq;
 using MySql.Data.MySqlClient;
 using Npgsql;
 using NUnit.Framework;
@@ -16,7 +17,8 @@ namespace Tests
 		[SetUp]
 		public void Setup()
 		{
-			_connectionFactoryInstance = ConnectionFactory.GetInstance();
+			var connectionStringProvider = new Mock<IConnectionStringProvider>();
+			_connectionFactoryInstance = new ConnectionFactory(connectionStringProvider.Object);
 		}
 
 		[Test]

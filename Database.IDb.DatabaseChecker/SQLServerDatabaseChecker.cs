@@ -3,11 +3,11 @@ using Database.IDatabase;
 
 namespace Database.IDb.DatabaseChecker
 {
-	public class DatabaseChecker : IDatabaseChecker
+	public class SQLServerDatabaseChecker : IDatabaseChecker
 	{
 		private IDbConnectionFactory _IDbConnectionProvider;
 
-		public DatabaseChecker(IDbConnectionFactory connectionProvider)
+		public SQLServerDatabaseChecker(IDbConnectionFactory connectionProvider)
 		{
 			_IDbConnectionProvider = connectionProvider;
 		}

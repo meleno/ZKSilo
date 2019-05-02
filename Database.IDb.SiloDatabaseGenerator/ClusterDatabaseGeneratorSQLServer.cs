@@ -18,6 +18,11 @@ namespace Database.IDb.SiloDatabaseGenerator
 			throw new NotImplementedException();
 		}
 
+		public bool MustUpdateDatabase(DatabaseConfig databaseConfig)
+		{
+			throw new NotImplementedException();
+		}
+
 		public void UpdateDatabase(DatabaseConfig databaseConfig)
 		{
 			throw new NotImplementedException();
