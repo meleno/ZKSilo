@@ -1,5 +1,7 @@
 ﻿using Database.Common;
 using Database.IDatabase;
+using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace Database.IDb.DatabaseChecker
 {
@@ -20,8 +22,13 @@ namespace Database.IDb.DatabaseChecker
 				{ conn.Open(); }
 				return true;
 			}
-			catch
-			{ return false; }
+			catch (DbException e)
+			{
+				if (e.ErrorCode == 4060)
+				{ return false; }
+				else
+				{ throw; }
+			}
 		}
 	}
 }
