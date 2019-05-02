@@ -2,7 +2,6 @@
 using Database.IDatabase;
 using Database.IDatabase.Exceptions;
 using Database.IDatabase.Language;
-using System;
 
 namespace Database.ConnectionStringProvider
 {
@@ -10,7 +9,7 @@ namespace Database.ConnectionStringProvider
 	{
 		public IConnectionStringProvider GetConnectionStringProvider(DatabaseConfig databaseConfig)
 		{
-			switch(databaseConfig.ServerType)
+			switch (databaseConfig.ServerType)
 			{
 				case ServerType.SQLServer:
 					return new SQLServerConnectionStringProvider();

@@ -1,6 +1,5 @@
 ﻿using Database.Common;
 using Database.IDatabase;
-using System;
 
 namespace Database.ConnectionStringProvider
 {
