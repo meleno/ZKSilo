@@ -6,6 +6,8 @@ namespace Database.Common
 	{
 		public string ServerAddress { get; set; }
 
+        public int ServerPort { get; set; }
+
 		public ConnectionType ConnectionType { get; set; }
 
 		public string UserName { get; set; }

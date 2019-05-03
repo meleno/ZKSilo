@@ -26,7 +26,7 @@ namespace Tests
 		}
 
 		[Test]
-		public void GetConnectionString_WhenSQLServer_ReturnsSQLServerString()
+		public void GetConnectionString_WhenCalled_ReturnsConnectionString()
 		{
 			var result = _connectionStringFactory.GetConnectionString(_SQLServerdatabaseConfig);
 			var expectedResult = $"Data Source={_SQLServerdatabaseConfig.ServerAddress};Database={_SQLServerdatabaseConfig.DatabaseName};User ID={_SQLServerdatabaseConfig.UserName };Password={_SQLServerdatabaseConfig.Password};Pooling=true;Encrypt={_SQLServerdatabaseConfig.UseSSL};TrustServerCertificate={!_SQLServerdatabaseConfig.AcceptAllCertificates};";
