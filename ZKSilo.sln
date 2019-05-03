@@ -59,6 +59,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.IDb.ClusterDatabas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.IDb.ClusterDatabaseGenerator.UnitTests", "Database.IDb.ClusterDatabaseGenerator.UnitTests\Database.IDb.ClusterDatabaseGenerator.UnitTests.csproj", "{E5C2C490-0EB4-4C0D-8277-44AF346689AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database.IDb.DatabaseGenerator", "Database.IDb.GeneralDatabaseGenerator\Database.IDb.DatabaseGenerator.csproj", "{172C21D6-790C-4A21-98E9-D9E60E5A12F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{E5C2C490-0EB4-4C0D-8277-44AF346689AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5C2C490-0EB4-4C0D-8277-44AF346689AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5C2C490-0EB4-4C0D-8277-44AF346689AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172C21D6-790C-4A21-98E9-D9E60E5A12F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172C21D6-790C-4A21-98E9-D9E60E5A12F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172C21D6-790C-4A21-98E9-D9E60E5A12F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172C21D6-790C-4A21-98E9-D9E60E5A12F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +175,7 @@ Global
 		{D44F4BD0-7FC9-4C89-9E5D-3329C92E1CE8} = {DCE6DCFB-728C-4865-B76A-961BA677C4E6}
 		{128605FE-F9D8-4018-B1AB-836CC9FB7104} = {9B8349B9-9D2B-4502-B70B-7BBC1491C3F1}
 		{E5C2C490-0EB4-4C0D-8277-44AF346689AC} = {8B9E870E-775C-4AEB-B314-3B9CE335A973}
+		{172C21D6-790C-4A21-98E9-D9E60E5A12F3} = {9B8349B9-9D2B-4502-B70B-7BBC1491C3F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D7C31F6-C28D-46F3-B06E-6796EB88FF15}

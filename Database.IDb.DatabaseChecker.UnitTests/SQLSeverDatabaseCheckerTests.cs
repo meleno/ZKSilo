@@ -27,7 +27,6 @@ namespace Tests
 			var databaseConnectionFactory = new Mock<IDbConnectionFactory>();
 
 			var databaseConnection = new Mock<IDbConnection>();
-			databaseConnection.Setup(dbconnection => dbconnection.Open());
 			databaseConnectionFactory.Setup(dbConnFactory => dbConnFactory.GetIDbConnectionForDatabase(It.Is<DatabaseConfig>(config => config.DatabaseId == DATABASE_EXISTS_ID))).Returns(() => databaseConnection.Object);
 
 			var databaseNotExistsConnectionException = new Mock<IDbConnection>();

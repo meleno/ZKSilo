@@ -11,6 +11,16 @@
   <ItemGroup>
     <ProjectReference Include="..\Database.Common\Database.Common.csproj" />
     <ProjectReference Include="..\Database.IDatabase\Database.IDatabase.csproj" />
+    <ProjectReference Include="..\Database.IDb.GeneralDatabaseGenerator\Database.IDb.DatabaseGenerator.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="OrleansAdoNetContent\SQLServer\SQLServer-Clustering.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="OrleansAdoNetContent\SQLServer\SQLServer-Main.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

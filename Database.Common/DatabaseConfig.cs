@@ -20,8 +20,6 @@ namespace Database.Common
 
 		public string DatabaseName { get; set; }
 
-		public ServerType ServerType { get; set; }
-
 		public int DatabaseId { get; set; }
 
 		public bool Equals(DatabaseConfig other)

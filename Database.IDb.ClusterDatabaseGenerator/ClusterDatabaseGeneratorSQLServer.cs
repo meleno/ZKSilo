@@ -1,40 +1,16 @@
-﻿using Database.Common;
-using Database.IDatabase;
+﻿using Database.IDatabase;
+using Database.IDb.GeneralDatabaseGenerator;
 using System;
-using Dapper;
+using System.Collections.Generic;
 
 namespace Database.IDb.SiloDatabaseGenerator
 {
-	public class ClusterDatabaseGeneratorSQLServer : IDatabaseGenerator, IDatabaseUpdater
+	public class ClusterDatabaseGeneratorSQLServer : DatabaseGenerator
 	{
-		private IDbConnectionFactory _IDbConnectionProvider;
+		public ClusterDatabaseGeneratorSQLServer(IDbConnectionFactory connectionProvider) : base(connectionProvider)
+		{ }
 
-		public ClusterDatabaseGeneratorSQLServer(IDbConnectionFactory connectionProvider)
-		{
-			_IDbConnectionProvider = connectionProvider;
-		}
-
-		public void GenerateDatabase(DatabaseConfig databaseConfig)
-		{
-			CreateDatabase(databaseConfig);
-		}
-
-		private void CreateDatabase(DatabaseConfig databaseConfig)
-		{
-			using (var connection = _IDbConnectionProvider.GetIDbConnectionForDatabase(databaseConfig))
-			{
-				connection.Open();
-				connection.Execute($"CREATE DATABASE {databaseConfig.DatabaseName}");
-				connection.Close();
-			}
-		}
-
-		public bool MustUpdateDatabase(DatabaseConfig databaseConfig)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void UpdateDatabase(DatabaseConfig databaseConfig)
+		protected override IEnumerable<string> GetScriptsForGeneratingTheDatabase()
 		{
 			throw new NotImplementedException();
 		}

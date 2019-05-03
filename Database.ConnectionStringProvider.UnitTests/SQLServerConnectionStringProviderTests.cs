@@ -20,7 +20,6 @@ namespace Tests
 				DatabaseName = "zktime",
 				Password = "Laurana",
 				ServerAddress = "localhost",
-				ServerType = ServerType.SQLServer,
 				UserName = "sa",
 				UseSSL = false };
 		}
