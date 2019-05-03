@@ -6,18 +6,16 @@ namespace Database.IDb.DatabaseChecker
 {
     public class SQLServerDatabaseChecker : IDatabaseChecker
     {
-        private IDbConnectionFactory _IDbConnectionProvider;
+        private IDbConnectionFactory _iDbConnectionProvider;
 
         public SQLServerDatabaseChecker(IDbConnectionFactory connectionProvider)
-        {
-            _IDbConnectionProvider = connectionProvider;
-        }
+        { _iDbConnectionProvider = connectionProvider; }
 
         public bool CheckIfDatabaseExists(DatabaseConfig databaseConfig)
         {
             try
             {
-                using (var conn = _IDbConnectionProvider.GetIDbConnectionForDatabase(databaseConfig))
+                using (var conn = _iDbConnectionProvider.GetIDbConnectionForDatabase(databaseConfig))
                 { conn.Open(); }
                 return true;
             }
