@@ -1,6 +1,7 @@
 ﻿using Database.Common;
 using Database.IDatabase;
 using System;
+using Dapper;
 
 namespace Database.IDb.SiloDatabaseGenerator
 {
@@ -15,7 +16,17 @@ namespace Database.IDb.SiloDatabaseGenerator
 
 		public void GenerateDatabase(DatabaseConfig databaseConfig)
 		{
-			throw new NotImplementedException();
+			CreateDatabase(databaseConfig);
+		}
+
+		private void CreateDatabase(DatabaseConfig databaseConfig)
+		{
+			using (var connection = _IDbConnectionProvider.GetIDbConnectionForDatabase(databaseConfig))
+			{
+				connection.Open();
+				connection.Execute($"CREATE DATABASE {databaseConfig.DatabaseName}");
+				connection.Close();
+			}
 		}
 
 		public bool MustUpdateDatabase(DatabaseConfig databaseConfig)

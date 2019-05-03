@@ -20,8 +20,18 @@ namespace Database.IDb.ConnectionFactory
 
 		public IDbConnection GetIDbConnectionForDatabase(DatabaseConfig config)
 		{
-			var connectionString = _connectionStringProvider.GetConnectionString(config);
+			var connectionString = _connectionStringProvider.GetDatabaseConnectionString(config);
+			return GetIDBConnection(config, connectionString);
+		}
 
+		public IDbConnection GetIDbConnectionForServer(DatabaseConfig config)
+		{
+			var connectionString = _connectionStringProvider.GetServerConnectionString(config);
+			return GetIDBConnection(config, connectionString);
+		}
+
+		private static IDbConnection GetIDBConnection(DatabaseConfig config, string connectionString)
+		{
 			switch (config.ServerType)
 			{
 				case ServerType.SQLServer:

@@ -4,6 +4,7 @@ namespace Database.IDatabase
 {
 	public interface IConnectionStringProvider
 	{
-		string GetConnectionString(DatabaseConfig config);
+		string GetDatabaseConnectionString(DatabaseConfig config);
+		string GetServerConnectionString(DatabaseConfig config);
 	}
 }

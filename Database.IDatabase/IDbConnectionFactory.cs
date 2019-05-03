@@ -6,5 +6,6 @@ namespace Database.IDatabase
 	public interface IDbConnectionFactory
 	{
 		IDbConnection GetIDbConnectionForDatabase(DatabaseConfig config);
+		IDbConnection GetIDbConnectionForServer(DatabaseConfig config);
 	}
 }

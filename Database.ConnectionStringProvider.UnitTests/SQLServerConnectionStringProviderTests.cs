@@ -26,10 +26,19 @@ namespace Tests
 		}
 
 		[Test]
-		public void GetConnectionString_WhenCalled_ReturnsConnectionString()
+		public void GetDatabaseConnectionString_WhenCalled_ReturnsConnectionString()
 		{
-			var result = _connectionStringFactory.GetConnectionString(_SQLServerdatabaseConfig);
+			var result = _connectionStringFactory.GetDatabaseConnectionString(_SQLServerdatabaseConfig);
 			var expectedResult = $"Data Source={_SQLServerdatabaseConfig.ServerAddress};Database={_SQLServerdatabaseConfig.DatabaseName};User ID={_SQLServerdatabaseConfig.UserName };Password={_SQLServerdatabaseConfig.Password};Pooling=true;Encrypt={_SQLServerdatabaseConfig.UseSSL};TrustServerCertificate={!_SQLServerdatabaseConfig.AcceptAllCertificates};";
+
+			Assert.That(result, Is.EqualTo(expectedResult));
+		}
+
+		[Test]
+		public void GetServerConnectionString_WhenCalled_ReturnsConnectionString()
+		{
+			var result = _connectionStringFactory.GetServerConnectionString(_SQLServerdatabaseConfig);
+			var expectedResult = $"Data Source={_SQLServerdatabaseConfig.ServerAddress};User ID={_SQLServerdatabaseConfig.UserName };Password={_SQLServerdatabaseConfig.Password};Pooling=true;Encrypt={_SQLServerdatabaseConfig.UseSSL};TrustServerCertificate={!_SQLServerdatabaseConfig.AcceptAllCertificates};";
 
 			Assert.That(result, Is.EqualTo(expectedResult));
 		}
