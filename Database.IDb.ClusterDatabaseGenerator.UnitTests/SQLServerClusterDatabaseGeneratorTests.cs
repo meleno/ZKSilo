@@ -1,12 +1,16 @@
+using Dapper;
 using Database.Common;
 using Database.ConnectionStringProvider;
-using Database.IDb.ConnectionFactory;
+using Database.IDatabase;
 using Database.IDb.SiloDatabaseGenerator;
+using Moq;
+using Moq.Dapper;
 using NUnit.Framework;
+using System.Data;
 
 namespace Tests
 {
-	public class ClusterDatabaseGeneratorSQLServerTests
+	public class SQLServerClusterDatabaseGeneratorTests
 	{
 		SQLServerClusterDatabaseGenerator _instance;
 		DatabaseConfig _config;
@@ -28,8 +32,13 @@ namespace Tests
 			};
 
 			var connectionStringProvider = new SQLServerConnectionStringProvider();
-			var connectionFactory = new SQLServerConnectionFactory(connectionStringProvider);
-			_instance = new SQLServerClusterDatabaseGenerator(connectionFactory);
+			var connectionFactory = new Mock<IDbConnectionFactory>();
+			var connection = new Mock<IDbConnection>();
+			connection.SetupDapper(a => a.Execute(It.IsAny<string>(), null, null, null, null)).Returns(1);
+
+			connectionFactory.Setup(a => a.GetIDbConnectionForDatabase(It.IsAny<DatabaseConfig>())).Returns(() => connection.Object);
+
+			_instance = new SQLServerClusterDatabaseGenerator(connectionFactory.Object);
 		}
 
 		[Test]
