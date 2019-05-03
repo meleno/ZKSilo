@@ -21,9 +21,9 @@ namespace Tests
 				ServerAddress = @"CACHOCARNEMOVIL\SQLEXPRESS",
 				DatabaseId = 1,
 				DatabaseName = "test",
-				Password = "none",
+				Password = "Laurana",
 				ServerPort = 12,
-				UserName = "asdf",
+				UserName = "sa",
 				UseSSL = false,
 			};
 

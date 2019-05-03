@@ -15,10 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="OrleansAdoNetContent\SQLServer\SQLServer-Clustering.sql">
+    <None Update="Scripts\Cluster\SQLServer\Script2.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="OrleansAdoNetContent\SQLServer\SQLServer-Main.sql">
+    <None Update="Scripts\Cluster\SQLServer\Script1.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

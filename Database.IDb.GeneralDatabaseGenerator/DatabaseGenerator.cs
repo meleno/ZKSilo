@@ -16,15 +16,15 @@ namespace Database.IDb.GeneralDatabaseGenerator
 
 		public void GenerateDatabase(DatabaseConfig databaseConfig)
 		{
-			var scripts = GetScriptsForGeneratingTheDatabase();
+			var scripts = GetScriptsToGenerateTheDatabase();
 
-			using (var connection = _IDbConnectionProvider.GetIDbConnectionForServer(databaseConfig))
+			using (var connection = _IDbConnectionProvider.GetIDbConnectionForDatabase(databaseConfig))
 			{
 				foreach (var script in scripts)
 				{ connection.Execute(script); }
 			}
 		}
 
-		protected abstract IEnumerable<string> GetScriptsForGeneratingTheDatabase();
+		protected abstract IEnumerable<string> GetScriptsToGenerateTheDatabase();
 	}
 }
