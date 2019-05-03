@@ -4,15 +4,15 @@ using Database.IDatabase;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Database.IDb.GeneralDatabaseGenerator
+namespace Database.IDb.DatabaseGenerator
 {
-	public abstract class DatabaseGenerator : IDatabaseGenerator
+	public abstract class GeneralDatabaseGenerator : IDatabaseGenerator
 	{
 		private IDbConnectionFactory _IDbConnectionProvider;
 
 		protected abstract string Path { get; }
 
-		public DatabaseGenerator(IDbConnectionFactory connectionProvider)
+		public GeneralDatabaseGenerator(IDbConnectionFactory connectionProvider)
 		{
 			_IDbConnectionProvider = connectionProvider;
 		}

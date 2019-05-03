@@ -11,7 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Database.Common\Database.Common.csproj" />
     <ProjectReference Include="..\Database.IDatabase\Database.IDatabase.csproj" />
-    <ProjectReference Include="..\Database.IDb.GeneralDatabaseGenerator\Database.IDb.DatabaseGenerator.csproj" />
+    <ProjectReference Include="..\Database.IDb.DatabaseGenerator\Database.IDb.DatabaseGenerator.csproj" />
   </ItemGroup>
 
   <ItemGroup>

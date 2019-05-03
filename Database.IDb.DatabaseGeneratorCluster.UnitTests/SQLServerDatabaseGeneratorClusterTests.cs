@@ -2,7 +2,7 @@ using Dapper;
 using Database.Common;
 using Database.ConnectionStringProvider;
 using Database.IDatabase;
-using Database.IDb.NLogDatabaseGenerator;
+using Database.IDb.DatabaseGeneratorCluster;
 using Moq;
 using Moq.Dapper;
 using NUnit.Framework;
@@ -10,9 +10,9 @@ using System.Data;
 
 namespace Tests
 {
-	public class SQLServerNLogDatabaseGeneratorTests
+	public class SQLServerDatabaseGeneratorClusterTests
 	{
-		SQLServerNLogDatabaseGenerator _instance;
+		SQLServerDatabaseGeneratorCluster _instance;
 		DatabaseConfig _config;
 
 		[SetUp]
@@ -38,7 +38,7 @@ namespace Tests
 
 			connectionFactory.Setup(a => a.GetIDbConnectionForDatabase(It.IsAny<DatabaseConfig>())).Returns(() => connection.Object);
 
-			_instance = new SQLServerNLogDatabaseGenerator(connectionFactory.Object);
+			_instance = new SQLServerDatabaseGeneratorCluster(connectionFactory.Object);
 		}
 
 		[Test]
