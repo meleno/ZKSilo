@@ -8,7 +8,7 @@ namespace Tests
 {
 	public class ClusterDatabaseGeneratorSQLServerTests
 	{
-		ClusterDatabaseGeneratorSQLServer _instance;
+		SQLServerClusterDatabaseGenerator _instance;
 		DatabaseConfig _config;
 
 		[SetUp]
@@ -29,7 +29,7 @@ namespace Tests
 
 			var connectionStringProvider = new SQLServerConnectionStringProvider();
 			var connectionFactory = new SQLServerConnectionFactory(connectionStringProvider);
-			_instance = new ClusterDatabaseGeneratorSQLServer(connectionFactory);
+			_instance = new SQLServerClusterDatabaseGenerator(connectionFactory);
 		}
 
 		[Test]
