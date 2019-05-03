@@ -1,8 +1,9 @@
 ﻿using Database.Common;
+using Database.ConnectionStringProvider;
 using Database.IDatabase.Exceptions;
 using NUnit.Framework;
 
-namespace Database.ConnectionStringProvider.UnitTests
+namespace Tests
 {
 	public class ConnectionStringProviderFactoryTests
 	{

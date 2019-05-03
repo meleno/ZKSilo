@@ -1,11 +1,12 @@
 ﻿using Database.Common;
 using Database.IDatabase;
 using Database.IDatabase.Exceptions;
+using Database.IDb.DatabaseChecker;
 using Moq;
 using NUnit.Framework;
 using System.Data;
 
-namespace Database.IDb.DatabaseChecker.UnitTests
+namespace Tests
 {
 	public class IDbDatabaseCheckerFactoryTests
 	{
@@ -32,7 +33,7 @@ namespace Database.IDb.DatabaseChecker.UnitTests
 		}
 
 		[Test]
-		public void GetDatabaseGenerator_WhenCalledWithSQLOracle_ThrowsDatabaseServerNotSupportedException()
+		public void GetDatabaseChecker_WhenCalledWithSQLOracle_ThrowsDatabaseServerNotSupportedException()
 		{
 			Assert.That(() => _IDbDatabaseCheckerFactory.GetDatabaseChecker(new DatabaseConfig() { ServerType = ServerType.Oracle }), Throws.Exception.InstanceOf<DatabaseServerNotSupportedException>());
 		}
