@@ -9,7 +9,7 @@ namespace Database.IDb.DatabaseGenerator
 {
 	public abstract class GeneralDatabaseGenerator : IDatabaseGenerator
 	{
-		private IDbConnectionFactory _IDbConnectionProvider;
+		protected IDbConnectionFactory _IDbConnectionProvider;
 
 		protected abstract string Path { get; }
 
@@ -19,6 +19,14 @@ namespace Database.IDb.DatabaseGenerator
 		}
 
 		public async Task GenerateDatabaseAsync(DatabaseConfig databaseConfig)
+		{
+			await CreateDatabase(databaseConfig);
+			await ExecuteScripts(databaseConfig);
+		}
+
+		protected abstract Task CreateDatabase(DatabaseConfig databaseConfig);
+
+		private async Task ExecuteScripts(DatabaseConfig databaseConfig)
 		{
 			var scripts = GetScriptsToGenerateTheDatabase();
 
@@ -31,15 +39,14 @@ namespace Database.IDb.DatabaseGenerator
 
 		protected IEnumerable<string> GetScriptsToGenerateTheDatabase()
 		{
-			string path = Path;
 			var i = 1;
-			string filename = $"{path}\\Script1.sql";
+			string filename = $"{Path}\\Script1.sql";
 
 			while (File.Exists(filename))
 			{
 				yield return File.ReadAllText(filename);
 				i++;
-				filename = $"{path}\\Script{i}.sql";
+				filename = $"{Path}\\Script{i}.sql";
 			}
 		}
 	}
