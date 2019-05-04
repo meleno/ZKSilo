@@ -7,6 +7,8 @@ using Moq;
 using Moq.Dapper;
 using NUnit.Framework;
 using System.Data;
+using System.Data.Common;
+using System.Threading.Tasks;
 
 namespace Tests
 {
@@ -33,8 +35,10 @@ namespace Tests
 
 			var connectionStringProvider = new SQLServerConnectionStringProvider();
 			var connectionFactory = new Mock<IDbConnectionFactory>();
-			var connection = new Mock<IDbConnection>();
-			connection.SetupDapper(a => a.Execute(It.IsAny<string>(), null, null, null, null)).Returns(1);
+			var connection = new Mock<DbConnection>();
+
+			connection.SetupDapperAsync(a => a.ExecuteAsync(It.IsAny<string>(), null, null, null, null))
+					  .ReturnsAsync(1);
 
 			connectionFactory.Setup(a => a.GetIDbConnectionForDatabase(It.IsAny<DatabaseConfig>())).Returns(() => connection.Object);
 
@@ -42,9 +46,9 @@ namespace Tests
 		}
 
 		[Test]
-		public void GenerateDatabase()
+		public async Task GenerateDatabase()
 		{
-			_instance.GenerateDatabaseAsync(_config);
+			await _instance.GenerateDatabaseAsync(_config);
 		}
 	}
 }
