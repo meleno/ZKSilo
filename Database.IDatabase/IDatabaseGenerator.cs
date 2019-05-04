@@ -1,9 +1,10 @@
 ﻿using Database.Common;
+using System.Threading.Tasks;
 
 namespace Database.IDatabase
 {
 	public interface IDatabaseGenerator
 	{
-		void GenerateDatabase(DatabaseConfig databaseConfig);
+		Task GenerateDatabaseAsync(DatabaseConfig databaseConfig);
 	}
 }

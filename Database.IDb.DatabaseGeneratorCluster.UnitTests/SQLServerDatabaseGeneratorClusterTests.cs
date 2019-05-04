@@ -2,11 +2,13 @@ using Dapper;
 using Database.Common;
 using Database.ConnectionStringProvider;
 using Database.IDatabase;
+using Database.IDb.ConnectionFactory;
 using Database.IDb.DatabaseGeneratorCluster;
 using Moq;
 using Moq.Dapper;
 using NUnit.Framework;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace Tests
 {
@@ -42,9 +44,9 @@ namespace Tests
 		}
 
 		[Test]
-		public void GenerateDatabase()
+		public async Task GenerateDatabase()
 		{
-			_instance.GenerateDatabase(_config);
+			await _instance.GenerateDatabaseAsync(_config);
 		}
 	}
 }

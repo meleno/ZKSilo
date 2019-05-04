@@ -44,7 +44,7 @@ namespace Tests
 		[Test]
 		public void GenerateDatabase()
 		{
-			_instance.GenerateDatabase(_config);
+			_instance.GenerateDatabaseAsync(_config);
 		}
 	}
 }
