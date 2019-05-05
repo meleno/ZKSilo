@@ -26,7 +26,7 @@ namespace Tests
 				ConnectionType = ConnectionType.TrustedConnection,
 				ServerAddress = @"CACHOCARNEMOVIL\SQLEXPRESS",
 				DatabaseId = 1,
-				DatabaseName = "test",
+				DatabaseName = "main",
 				Password = "Laurana",
 				ServerPort = 12,
 				UserName = "sa",

@@ -8,4 +8,10 @@
     <ProjectReference Include="..\Database.IDb.DatabaseGenerator\Database.IDb.DatabaseGenerator.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Scripts\Main\SQLServer\Script1.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
