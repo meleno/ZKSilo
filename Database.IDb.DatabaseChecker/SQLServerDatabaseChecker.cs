@@ -1,5 +1,6 @@
 ﻿using Database.Common;
 using Database.IDatabase;
+using System;
 using System.Data.Common;
 
 namespace Database.IDb.DatabaseChecker
@@ -9,7 +10,7 @@ namespace Database.IDb.DatabaseChecker
         private IDbConnectionFactory _iDbConnectionProvider;
 
         public SQLServerDatabaseChecker(IDbConnectionFactory connectionProvider)
-        { _iDbConnectionProvider = connectionProvider; }
+        { _iDbConnectionProvider = connectionProvider ?? throw new ArgumentNullException(nameof(connectionProvider)); }
 
         public bool CheckIfDatabaseExists(DatabaseConfig databaseConfig)
         {

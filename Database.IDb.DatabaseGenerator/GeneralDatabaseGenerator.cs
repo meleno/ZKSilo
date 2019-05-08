@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Database.Common;
 using Database.IDatabase;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace Database.IDb.DatabaseGenerator
 
 		public GeneralDatabaseGenerator(IDbConnectionFactory connectionProvider)
 		{
-			_IDbConnectionProvider = connectionProvider;
+			_IDbConnectionProvider = connectionProvider ?? throw new ArgumentNullException(nameof(connectionProvider));
 		}
 
 		public async Task GenerateDatabaseAsync(DatabaseConfig databaseConfig)

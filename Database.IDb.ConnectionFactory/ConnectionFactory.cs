@@ -1,5 +1,6 @@
 ﻿using Database.Common;
 using Database.IDatabase;
+using System;
 using System.Data;
 
 namespace Database.IDb.ConnectionFactory
@@ -10,7 +11,7 @@ namespace Database.IDb.ConnectionFactory
 
 		public ConnectionFactory(IConnectionStringProvider connectionStringProvider)
 		{
-			_connectionStringProvider = connectionStringProvider;
+			_connectionStringProvider = connectionStringProvider ?? throw new ArgumentNullException(nameof(connectionStringProvider));
 		}
 
 		public IDbConnection GetIDbConnectionForDatabase(DatabaseConfig config)
