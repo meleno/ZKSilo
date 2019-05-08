@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Database.ConnectionStringProvider\Database.ConnectionStringProvider.csproj" />
-    <ProjectReference Include="..\Database.IDatabase\Database.IDatabase.csproj" />
     <ProjectReference Include="..\Database.IDb.ConnectionFactory\Database.IDb.ConnectionFactory.csproj" />
     <ProjectReference Include="..\Database.IDb.DatabaseGeneratorCluster\Database.IDb.DatabaseGeneratorCluster.csproj" />
   </ItemGroup>

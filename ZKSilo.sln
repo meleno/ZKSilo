@@ -37,8 +37,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silo.Server", "Silo.Server\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silo.Interfaces", "Silo.Interfaces\Silo.Interfaces.csproj", "{C5AED798-3ED8-4AC4-9282-977515901204}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.IDatabase", "Database.IDatabase\Database.IDatabase.csproj", "{75F5A7F5-90EB-4311-A2FC-844C16CA72A5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IDb", "IDb", "{9B8349B9-9D2B-4502-B70B-7BBC1491C3F1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.IDb.ConnectionFactory", "Database.IDb.ConnectionFactory\Database.IDb.ConnectionFactory.csproj", "{044CB36B-C323-4724-8316-F3A7E9EE4A5D}"
@@ -65,9 +63,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.IDb.DatabaseGenera
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.IDb.DatabaseGeneratorNLog.UnitTests", "Database.IDb.DatabaseGeneratorNLog.UnitTests\Database.IDb.DatabaseGeneratorNLog.UnitTests.csproj", "{39E2C97E-81FF-4FAE-830B-9C0B99BF9391}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database.IDb.DatabaseGeneratorMain", "Database.IDb.DatabaseGeneratorMain\Database.IDb.DatabaseGeneratorMain.csproj", "{2CC8C75C-00E1-4D35-820A-6B1100315C0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.IDb.DatabaseGeneratorMain", "Database.IDb.DatabaseGeneratorMain\Database.IDb.DatabaseGeneratorMain.csproj", "{2CC8C75C-00E1-4D35-820A-6B1100315C0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database.IDb.DatabaseGeneratorMain.UnitTests", "Database.IDb.DatabaseGeneratorMain.UnitTests\Database.IDb.DatabaseGeneratorMain.UnitTests.csproj", "{FC1B9A33-8E71-497D-98D5-34398027CFD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.IDb.DatabaseGeneratorMain.UnitTests", "Database.IDb.DatabaseGeneratorMain.UnitTests\Database.IDb.DatabaseGeneratorMain.UnitTests.csproj", "{FC1B9A33-8E71-497D-98D5-34398027CFD7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.Interfaces", "Database.Interfaces\Database.Interfaces.csproj", "{BCC98D10-EE9A-406C-B193-8D4040001658}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,10 +115,6 @@ Global
 		{C5AED798-3ED8-4AC4-9282-977515901204}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5AED798-3ED8-4AC4-9282-977515901204}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5AED798-3ED8-4AC4-9282-977515901204}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75F5A7F5-90EB-4311-A2FC-844C16CA72A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75F5A7F5-90EB-4311-A2FC-844C16CA72A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75F5A7F5-90EB-4311-A2FC-844C16CA72A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75F5A7F5-90EB-4311-A2FC-844C16CA72A5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{044CB36B-C323-4724-8316-F3A7E9EE4A5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{044CB36B-C323-4724-8316-F3A7E9EE4A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{044CB36B-C323-4724-8316-F3A7E9EE4A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -171,6 +167,10 @@ Global
 		{FC1B9A33-8E71-497D-98D5-34398027CFD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC1B9A33-8E71-497D-98D5-34398027CFD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC1B9A33-8E71-497D-98D5-34398027CFD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCC98D10-EE9A-406C-B193-8D4040001658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCC98D10-EE9A-406C-B193-8D4040001658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCC98D10-EE9A-406C-B193-8D4040001658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCC98D10-EE9A-406C-B193-8D4040001658}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -188,7 +188,6 @@ Global
 		{B1CB0F55-7987-4090-B5F1-730B47B04343} = {836FF459-EC63-43A9-8959-B3FEA53BA6D9}
 		{2376EFEA-90B4-405E-9AC3-3F8B7D43C480} = {836FF459-EC63-43A9-8959-B3FEA53BA6D9}
 		{C5AED798-3ED8-4AC4-9282-977515901204} = {836FF459-EC63-43A9-8959-B3FEA53BA6D9}
-		{75F5A7F5-90EB-4311-A2FC-844C16CA72A5} = {74C3E1F4-F0F8-42C2-A526-4A25F118AE1C}
 		{9B8349B9-9D2B-4502-B70B-7BBC1491C3F1} = {74C3E1F4-F0F8-42C2-A526-4A25F118AE1C}
 		{044CB36B-C323-4724-8316-F3A7E9EE4A5D} = {9B8349B9-9D2B-4502-B70B-7BBC1491C3F1}
 		{47243740-20A2-49A5-B2F8-49CFCD2F9AFB} = {8B9E870E-775C-4AEB-B314-3B9CE335A973}
@@ -204,6 +203,7 @@ Global
 		{39E2C97E-81FF-4FAE-830B-9C0B99BF9391} = {8B9E870E-775C-4AEB-B314-3B9CE335A973}
 		{2CC8C75C-00E1-4D35-820A-6B1100315C0D} = {9B8349B9-9D2B-4502-B70B-7BBC1491C3F1}
 		{FC1B9A33-8E71-497D-98D5-34398027CFD7} = {8B9E870E-775C-4AEB-B314-3B9CE335A973}
+		{BCC98D10-EE9A-406C-B193-8D4040001658} = {74C3E1F4-F0F8-42C2-A526-4A25F118AE1C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D7C31F6-C28D-46F3-B06E-6796EB88FF15}

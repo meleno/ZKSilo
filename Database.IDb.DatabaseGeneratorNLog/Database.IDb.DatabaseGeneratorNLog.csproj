@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Database.IDatabase\Database.IDatabase.csproj" />
     <ProjectReference Include="..\Database.IDb.DatabaseGenerator\Database.IDb.DatabaseGenerator.csproj" />
   </ItemGroup>
 

@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Database.Common\Database.Common.csproj" />
-    <ProjectReference Include="..\Database.IDatabase\Database.IDatabase.csproj" />
+    <ProjectReference Include="..\Database.Interfaces\Database.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>
