@@ -40,8 +40,8 @@ namespace Tests
 			connection.SetupDapperAsync(a => a.ExecuteAsync(It.IsAny<string>(), null, null, null, null))
 					  .ReturnsAsync(1);
 
-			connectionFactory.Setup(a => a.GetIDbConnectionForDatabase(It.IsAny<DatabaseConfig>()))
-				      .Returns(() => connection.Object);
+			connectionFactory.Setup(a => a.GetIDbConnectionForDatabase(It.IsAny<DatabaseConfig>())).Returns(() => connection.Object);
+			connectionFactory.Setup(a => a.GetIDbConnectionForServer(It.IsAny<DatabaseConfig>())).Returns(() => connection.Object);
 
 			_instance = new SQLServerDatabaseGeneratorNLog(connectionFactory.Object);
 		}

@@ -7,7 +7,7 @@ namespace Database.IDb.ConnectionFactory
 {
 	public abstract class ConnectionFactory : IDbConnectionFactory
 	{
-		private IConnectionStringProvider _connectionStringProvider;
+		private readonly IConnectionStringProvider _connectionStringProvider;
 
 		public ConnectionFactory(IConnectionStringProvider connectionStringProvider)
 		{

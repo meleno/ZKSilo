@@ -7,7 +7,7 @@ namespace Database.IDb.DatabaseChecker
 {
     public class SQLServerDatabaseChecker : IDatabaseChecker
     {
-        private IDbConnectionFactory _iDbConnectionProvider;
+        private readonly IDbConnectionFactory _iDbConnectionProvider;
 
         public SQLServerDatabaseChecker(IDbConnectionFactory connectionProvider)
         { _iDbConnectionProvider = connectionProvider ?? throw new ArgumentNullException(nameof(connectionProvider)); }

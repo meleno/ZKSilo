@@ -10,7 +10,7 @@ namespace Database.IDb.DatabaseGenerator
 {
 	public abstract class GeneralDatabaseGenerator : IDatabaseGenerator
 	{
-		protected IDbConnectionFactory _IDbConnectionProvider;
+		protected readonly IDbConnectionFactory _IDbConnectionProvider;
 
 		protected abstract string Path { get; }
 

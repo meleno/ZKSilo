@@ -41,6 +41,7 @@ namespace Tests
 					  .ReturnsAsync(1);
 
 			connectionFactory.Setup(a => a.GetIDbConnectionForDatabase(It.IsAny<DatabaseConfig>())).Returns(() => connection.Object);
+			connectionFactory.Setup(a => a.GetIDbConnectionForServer(It.IsAny<DatabaseConfig>())).Returns(() => connection.Object);
 
 			_instance = new SQLServerDatabaseGeneratorMain(connectionFactory.Object);
 		}
